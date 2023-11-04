@@ -5,7 +5,7 @@ const {bgBlackBright, blue, bold, gray, green, magenta, yellow} = chalk;
 /**
  * @param {string} msg
  */
-export const header = msg => bgBlackBright(magenta(bold(` - ${msg} - `)));
+export const header = msg => bgBlackBright(magenta(bold(` ${msg} `)));
 
 /**
  * @param {string} msg
