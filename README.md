@@ -33,4 +33,4 @@ await api.getDnsInfoOnce();
 await api.getDnsInfoMulti();
 ```
 
-[Options and parameters with their default values](/blob/master/app/api/IPLeak.js#L8)
+[Options and parameters with their default values](/app/api/IPLeak.js#L8)
