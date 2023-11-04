@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "DNS leak test",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
