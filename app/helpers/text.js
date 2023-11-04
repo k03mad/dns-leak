@@ -1,14 +1,14 @@
 import chalk from 'chalk';
 
-const {bgBlackBright, blue, gray, green, magenta, yellow} = chalk;
+const {bgBlackBright, blue, bold, gray, green, magenta, yellow} = chalk;
 
 /**
- * @param {any} msg
+ * @param {string} msg
  */
-export const header = msg => bgBlackBright(magenta(` ${msg} `));
+export const header = msg => bgBlackBright(magenta(bold(` - ${msg} - `)));
 
 /**
- * @param {any} msg
+ * @param {string} msg
  */
 export const bar = msg => yellow(msg);
 
