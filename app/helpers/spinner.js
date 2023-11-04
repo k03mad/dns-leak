@@ -1,6 +1,6 @@
 import ora from 'ora';
 
-import {bar} from './text.js';
+import {bar, info} from './text.js';
 
 export const spinner = {};
 
@@ -26,7 +26,7 @@ export const start = (name, active) => {
  * @param {string} msg
  */
 export const text = (name, msg) => {
-    spinner[name].instance.text = bar(msg);
+    spinner[name].instance.text = `${info(name)} ${bar(msg)}`;
 };
 
 /**

@@ -11,29 +11,26 @@ export default class IPLeak {
     /**
      * @param {object} [opts]
      * @param {number} [opts.dnsRequestsCount] dns leak multi requests count with one session
-     * @param {number} [opts.dnsRequestsRps] dns leak requests rps
      * @param {number} [opts.dnsRequestsWaitBeforeLastMs] dns leak multi requests wait before the last request (with all ips gathered)
      * @param {number} [opts.dnsSessionStringLength] dns leak session string length, only works with 40 characters for now
      * @param {number} [opts.dnsUniqStringLength] dns leak unique string length for subdomain
      * @param {number} [opts.ipRequestsCacheExpireMs] ip info requests cache ttl ms for same ip
-     * @param {number} [opts.ipRequestsRps] ip info requests rps
+     * @param {number} [opts.requestsRps] parallel requests rps
      */
     constructor({
         dnsRequestsCount = 30,
-        dnsRequestsRps = 2,
         dnsRequestsWaitBeforeLastMs = 2000,
         dnsSessionStringLength = 40,
         dnsUniqStringLength = 20,
         ipRequestsCacheExpireMs = 3_600_000,
-        ipRequestsRps = 2,
+        requestsRps = 2,
     } = {}) {
         this._dnsRequestsCount = dnsRequestsCount;
-        this._dnsRequestsRps = dnsRequestsRps;
         this._dnsRequestsWaitBeforeLastMs = dnsRequestsWaitBeforeLastMs;
         this._dnsSessionStringLength = dnsSessionStringLength;
         this._dnsUniqStringLength = dnsUniqStringLength;
         this._ipRequestsCacheExpireMs = ipRequestsCacheExpireMs;
-        this._ipRequestsRps = ipRequestsRps;
+        this._requestsRps = requestsRps;
     }
 
     /** */
@@ -71,7 +68,7 @@ export default class IPLeak {
 
         const {body} = await requestCache(ipEndpoint, {}, {
             expire: this._ipRequestsCacheExpireMs,
-            rps: this._ipRequestsRps,
+            rps: this._requestsRps,
         });
 
         return body;
@@ -86,7 +83,11 @@ export default class IPLeak {
     async getDnsInfoOnce({session = this._dnsSessionString, uniqString = this._dnsUniqString} = {}) {
         const dnsEndpoint = this._endpoints.dns(session, uniqString);
 
-        const {body} = await request(dnsEndpoint, {}, {queueBy: session, rps: this._dnsRequestsRps});
+        const {body} = await request(dnsEndpoint, {}, {
+            queueBy: session,
+            rps: this._requestsRps,
+        });
+
         return body;
     }
 
@@ -97,7 +98,7 @@ export default class IPLeak {
      * @returns {Promise<object>}
      */
     async getDnsInfoMulti({isSpinnerEnabled, session = this._dnsSessionString} = {}) {
-        const spinnerName = 'dnsReq';
+        const spinnerName = 'DNS info';
         const arrayFromLen = Array.from({length: this._dnsRequestsCount - 1});
 
         spinner.start(spinnerName, isSpinnerEnabled);
@@ -107,7 +108,6 @@ export default class IPLeak {
             spinner.count(spinnerName, this._dnsRequestsCount);
         }));
 
-        spinner.text(spinnerName, 'Wait for last request');
         await sleep(this._dnsRequestsWaitBeforeLastMs);
         const info = await this.getDnsInfoOnce({session});
 

@@ -6,14 +6,14 @@ export default class IPWhois {
     /**
      * @param {object} [opts]
      * @param {number} [opts.ipRequestsCacheExpireMs] ip info requests cache ttl ms for same ip
-     * @param {number} [opts.ipRequestsRps] ip info requests rps
+     * @param {number} [opts.requestsRps] parallel requests rps
      */
     constructor({
         ipRequestsCacheExpireMs = 3_600_000,
-        ipRequestsRps = 2,
+        requestsRps = 2,
     } = {}) {
         this._ipRequestsCacheExpireMs = ipRequestsCacheExpireMs;
-        this._ipRequestsRps = ipRequestsRps;
+        this._requestsRps = requestsRps;
     }
 
     /** */
@@ -35,7 +35,7 @@ export default class IPWhois {
 
         const {body} = await requestCache(ipEndpoint, {}, {
             expire: this._ipRequestsCacheExpireMs,
-            rps: this._ipRequestsRps,
+            rps: this._requestsRps,
         });
 
         return body;
