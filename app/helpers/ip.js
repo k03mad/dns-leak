@@ -14,7 +14,7 @@ const {blue, green} = chalk;
  * @param {string} [ipInfo.isp_name]
  * @param {string} [ipInfo.region_name]
  */
-export const formatIpInfo = ({city_name, country_code, country_name, ip, isp_name, region_name}) => {
+export const formatIpInfo = ({city_name, country_code, country_name, ip, isp_name, region_name} = {}) => {
     let output = '';
 
     if (ip) {
