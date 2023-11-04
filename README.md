@@ -10,7 +10,9 @@ Using API/tools:\
 
 ```bash
 npm i @k03mad/dns-leak -g
+```
 
+```bash
 dns-leak
 ```
 
