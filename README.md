@@ -21,6 +21,7 @@ npm i @k03mad/dns-leak
 ```
 
 ```js
-import {CloudPing, IPLeak, IPWhois, NextDNS} from './api/_index.js';
-// details at ./app/api folder
+import {CloudPing, IPLeak, IPWhois, NextDNS} from '@k03mad/dns-leak';
 ```
+
+Details at [./app/api folder](/app/api)
