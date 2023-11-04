@@ -9,7 +9,7 @@ const NextApi = new NextDNS();
 const WhoisApi = new IPWhois();
 const CloudPingApi = new CloudPing();
 
-const [leak, next, whois, location] = await Promise.all([
+const [leak, next, whois, location] = await Promise.allSettled([
     LeakApi.getDnsInfoMulti({isSpinnerEnabled: true}),
     NextApi.getTest(),
     WhoisApi.getIpInfo(),
@@ -19,43 +19,60 @@ const [leak, next, whois, location] = await Promise.all([
 const spinnerName = 'IP info';
 spinner.start(spinnerName, true);
 
-const dnsIps = [...new Set([...Object.keys(leak.ip), next.resolver])];
+const dnsIps = [
+    ...new Set([
+        ...Object.keys(leak.value?.ip || []),
+        next.value?.resolver || '',
+    ]),
+].filter(Boolean);
 
-const dnsData = await Promise.all(dnsIps.map(async ip => {
-    const data = await WhoisApi.getIpInfo({ip});
-    spinner.count(spinnerName, dnsIps.length);
-    return data;
+const dnsIpsInfo = await Promise.all(dnsIps.map(async ip => {
+    try {
+        const data = await WhoisApi.getIpInfo({ip});
+        spinner.count(spinnerName, dnsIps.length);
+        return data;
+    } catch {}
 }));
 
-spinner.stop(spinnerName);
+const dnsIpsInfoFormatted = dnsIpsInfo
+    .filter(Boolean)
+    .sort((a, b) => a?.ip?.localeCompare(b?.ip))
+    .flatMap(data => formatIpInfo(data));
 
-log(
-    '',
-    header('IP'),
-    '',
-    formatIpInfo(whois),
-    '',
-    header('DNS'),
-    '',
-    ...dnsData
-        .sort((a, b) => a?.ip?.localeCompare(b?.ip))
-        .flatMap(data => [formatIpInfo(data), '']),
-);
+const output = [];
 
-if (next.ecs) {
-    const data = await WhoisApi.getIpInfo({ip: next.ecs.replace(/\/.+/, '')});
-    data.ip += ` (${next.ecs})`;
-
-    log(
-        header('DNS ECS'),
-        '',
-        formatIpInfo(data),
-        '',
+if (whois.value) {
+    output.push(
+        header('IP'),
+        formatIpInfo(whois.value),
     );
 }
 
-log(
-    header('CLOUDFRONT CDN'),
-    '',
-    formatLocationInfo(location),
-);
+if (dnsIpsInfoFormatted.length > 0) {
+    output.push(
+        header('DNS'),
+        ...dnsIpsInfoFormatted,
+    );
+}
+
+if (next.value?.ecs) {
+    try {
+        const data = await WhoisApi.getIpInfo({ip: next.value.ecs.replace(/\/.+/, '')});
+        data.ip += ` (${next.value.ecs})`;
+
+        output.push(
+            header('DNS ECS'),
+            formatIpInfo(data),
+        );
+    } catch {}
+}
+
+if (location.value) {
+    output.push(
+        header('CLOUDFRONT CDN'),
+        formatLocationInfo(location.value),
+    );
+}
+
+spinner.stop(spinnerName);
+log(`\n${output.join('\n\n')}`);
