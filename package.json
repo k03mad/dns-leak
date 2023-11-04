@@ -1,0 +1,42 @@
+{
+  "name": "@k03mad/dns-leak",
+  "version": "1.0.0",
+  "description": "DNS leak test",
+  "maintainers": [
+    "Kirill Molchanov <k03.mad@gmail.com"
+  ],
+  "main": "app/api/IPLeak.js",
+  "bin": "app/index.js",
+  "repository": "k03mad/dns-leak",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@k03mad/request": "3.2.0",
+    "chalk": "5.3.0",
+    "country-locale-map": "1.8.15",
+    "nanoid": "5.0.2",
+    "nanoid-dictionary": "5.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@k03mad/eslint-config": "13.3.1",
+    "@microsoft/eslint-formatter-sarif": "3.0.0",
+    "eslint": "8.53.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-jsdoc": "46.8.2",
+    "eslint-plugin-n": "16.2.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-sort-destructure-keys": "1.5.0",
+    "eslint-plugin-unicorn": "49.0.0",
+    "husky": "8.0.3"
+  },
+  "scripts": {
+    "lint": "eslint ./ --report-unused-disable-directives",
+    "lint:github": "eslint ./ --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif",
+    "clean": "rm -rfv ./node_modules || true",
+    "setup": "npm run clean && npm i",
+    "prepare": "husky install"
+  }
+}
