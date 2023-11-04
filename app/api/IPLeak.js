@@ -3,6 +3,7 @@ import {customAlphabet} from 'nanoid';
 import {lowercase, numbers} from 'nanoid-dictionary';
 
 import {sleep} from '../helpers/promise.js';
+import * as spinner from '../helpers/spinner.js';
 
 /** */
 export default class IPLeak {
@@ -93,15 +94,25 @@ export default class IPLeak {
     /**
      * @param {object} [opts]
      * @param {string} [opts.session]
+     * @param {boolean} [opts.isSpinnerEnabled]
      * @returns {Promise<object>}
      */
-    async getDnsInfoMulti({session = this._dnsSessionString} = {}) {
-        const arrayFromLen = Array.from({length: this._dnsRequestsCount});
+    async getDnsInfoMulti({isSpinnerEnabled, session = this._dnsSessionString} = {}) {
+        const spinnerName = 'dnsReq';
+        const arrayFromLen = Array.from({length: this._dnsRequestsCount - 1});
 
-        await Promise.all(arrayFromLen.map(() => this.getDnsInfoOnce({session})));
+        spinner.start(spinnerName, isSpinnerEnabled);
+
+        await Promise.all(arrayFromLen.map(async () => {
+            await this.getDnsInfoOnce({session});
+            spinner.count(spinnerName, this._dnsRequestsCount);
+        }));
+
+        spinner.text(spinnerName, 'Wait for last request');
         await sleep(this._dnsRequestsWaitBeforeLastMs);
-
         const info = await this.getDnsInfoOnce({session});
+
+        spinner.stop(spinnerName);
         return info;
     }
 

@@ -3,7 +3,17 @@
 import chalk from 'chalk';
 import clm from 'country-locale-map';
 
-const {blue, green} = chalk;
+const {bgBlackBright, blue, green, magenta, yellow} = chalk;
+
+/**
+ * @param {any} msg
+ */
+export const header = msg => bgBlackBright(magenta(` ${msg} `));
+
+/**
+ * @param {any} msg
+ */
+export const bar = msg => yellow(msg);
 
 /**
  * @param {object} [ipInfo]

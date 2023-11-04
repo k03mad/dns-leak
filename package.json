@@ -18,7 +18,8 @@
     "chalk": "5.3.0",
     "country-locale-map": "1.8.15",
     "nanoid": "5.0.2",
-    "nanoid-dictionary": "5.0.0-beta.1"
+    "nanoid-dictionary": "5.0.0-beta.1",
+    "ora": "7.0.1"
   },
   "devDependencies": {
     "@k03mad/eslint-config": "13.3.1",
