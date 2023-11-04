@@ -5,8 +5,8 @@
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
   ],
-  "main": "app/api/IPLeak.js",
-  "bin": "app/index.js",
+  "main": "app/api/index.js",
+  "bin": "app/run.js",
   "repository": "k03mad/dns-leak",
   "license": "MIT",
   "type": "module",
@@ -16,7 +16,6 @@
   "dependencies": {
     "@k03mad/request": "3.2.0",
     "chalk": "5.3.0",
-    "country-locale-map": "1.8.15",
     "nanoid": "5.0.2",
     "nanoid-dictionary": "5.0.0-beta.1",
     "ora": "7.0.1"

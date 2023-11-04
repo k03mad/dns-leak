@@ -1,6 +1,8 @@
 # DNS leak test
 
-Based on: [ipleak.net](https://ipleak.net/) / [API](https://airvpn.org/forums/topic/14737-api/)
+Based on:\
+— [ipleak.net](https://ipleak.net) ([API](https://airvpn.org/forums/topic/14737-api))\
+— [ipwhois.io](https://ipwhois.io) ([API](https://ipwhois.io/documentation))
 
 ## Global
 
@@ -17,20 +19,21 @@ npm i @k03mad/dns-leak
 ```
 
 ```js
-import IPLeak from '@k03mad/dns-leak';
+import {IPLeak, IPWhois} from '@k03mad/dns-leak';
 
-// default params (details at the link below)
-const api = new IPLeak();
+// default params (details at the ./app/api folder)
+const LeakApi = new IPLeak();
+const WhoisApi = new IPWhois();
 
 // get current external ip info
-await api.getIpInfo();
+await WhoisApi.getIpInfo();
+await LeakApi.getIpInfo();
 // get other ip info
-await api.getIpInfo({ip: '8.8.8.8'});
+await WhoisApi.getIpInfo({ip: '8.8.8.8'});
+await LeakApi.getIpInfo({ip: '8.8.8.8'});
 
 // dns leak check with one request (one request — fewer dns ips)
-await api.getDnsInfoOnce();
+await LeakApi.getDnsInfoOnce();
 // dns leak check with multi requests
-await api.getDnsInfoMulti();
+await LeakApi.getDnsInfoMulti();
 ```
-
-[Options and parameters with their default values](/app/api/IPLeak.js#L8)

@@ -9,7 +9,6 @@ import * as spinner from '../helpers/spinner.js';
 export default class IPLeak {
 
     /**
-     * All args are not required, the default ones works fine
      * @param {object} [opts]
      * @param {number} [opts.dnsRequestsCount] dns leak multi requests count with one session
      * @param {number} [opts.dnsRequestsRps] dns leak requests rps

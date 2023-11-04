@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-
-import IPLeak from './api/IPLeak.js';
+import {IPLeak, IPWhois} from './api/index.js';
 import {log} from './helpers/log.js';
 import * as spinner from './helpers/spinner.js';
 import {formatIpInfo, header} from './helpers/text.js';
 
-const api = new IPLeak();
+const LeakApi = new IPLeak();
+const WhoisApi = new IPWhois();
 
-const currentIpInfo = await api.getIpInfo();
+const currentIpInfo = await WhoisApi.getIpInfo();
 
 log(
     '',
@@ -19,13 +19,13 @@ log(
     '',
 );
 
-const dnsInfo = await api.getDnsInfoMulti({isSpinnerEnabled: true});
+const dnsInfo = await LeakApi.getDnsInfoMulti({isSpinnerEnabled: true});
 const dnsIps = [...new Set(Object.keys(dnsInfo.ip))];
 
 spinner.start(currentIpInfo.ip, true);
 
 const dnsData = await Promise.all(dnsIps.map(async ip => {
-    const data = await api.getIpInfo({ip});
+    const data = await WhoisApi.getIpInfo({ip});
     spinner.count(currentIpInfo.ip, dnsIps.length);
     return data;
 }));

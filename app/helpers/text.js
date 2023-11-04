@@ -1,9 +1,6 @@
-/* eslint-disable camelcase */
-
 import chalk from 'chalk';
-import clm from 'country-locale-map';
 
-const {bgBlackBright, blue, green, magenta, yellow} = chalk;
+const {bgBlackBright, blue, gray, green, magenta, yellow} = chalk;
 
 /**
  * @param {any} msg
@@ -17,39 +14,47 @@ export const bar = msg => yellow(msg);
 
 /**
  * @param {object} [ipInfo]
- * @param {string} [ipInfo.city_name]
- * @param {string} [ipInfo.country_code]
- * @param {string} [ipInfo.country_name]
+ * @param {string} [ipInfo.city]
+ * @param {string} [ipInfo.country]
  * @param {string} [ipInfo.ip]
- * @param {string} [ipInfo.isp_name]
- * @param {string} [ipInfo.region_name]
+ * @param {string} [ipInfo.region]
+ * @param {object} [ipInfo.flag]
+ * @param {object} [ipInfo.connection]
  */
-export const formatIpInfo = ({city_name, country_code, country_name, ip, isp_name, region_name} = {}) => {
+export const formatIpInfo = ({city, connection, country, flag, ip, region} = {}) => {
     let output = '';
 
     if (ip) {
-        output += `${blue(ip)} `;
+        output += `${blue(ip)}\n`;
     }
 
-    if (isp_name) {
-        output += green(isp_name);
+    if (connection?.org) {
+        output += `${green(connection.org)} `;
+    }
+
+    if (connection?.isp && !connection?.org?.includes(connection?.isp)) {
+        if (connection?.org) {
+            output += green('/ ');
+        }
+
+        output += `${green(connection.isp)} `;
+    }
+
+    if (connection?.domain) {
+        output += gray(`(${connection.domain})`);
     }
 
     output += '\n';
 
-    if (country_code) {
-        const {emoji} = clm.getCountryByAlpha2(country_code);
-
-        if (emoji) {
-            output += `${emoji}  `;
-        }
+    if (flag?.emoji) {
+        output += `${flag.emoji}  `;
     }
 
     output += [
         ...new Set([
-            country_name,
-            region_name,
-            city_name,
+            country,
+            region,
+            city,
         ]),
     ].filter(Boolean).join(' :: ');
 
