@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import {CloudPing, IPLeak, IPWhois, NextDNS} from './api/_index.js';
+
+import {CloudPing, IPLeak, IPWhois, NextDNS, Wander} from './api/_index.js';
 import {log} from './helpers/log.js';
 import * as spinner from './helpers/spinner.js';
 import {formatIpInfo, formatLocationInfo, header} from './helpers/text.js';
@@ -8,12 +9,14 @@ const LeakApi = new IPLeak();
 const NextApi = new NextDNS();
 const WhoisApi = new IPWhois();
 const CloudPingApi = new CloudPing();
+const WanderApi = new Wander();
 
-const [leak, next, whois, location] = await Promise.allSettled([
+const [leak, next, whois, location, dnssec] = await Promise.allSettled([
     LeakApi.getDnsInfoMulti({isSpinnerEnabled: true}),
     NextApi.getTest(),
     WhoisApi.getIpInfo(),
     CloudPingApi.getCurrentLocation(),
+    WanderApi.checkDNSSEC(),
 ]);
 
 const spinnerName = 'IP info';
@@ -65,6 +68,13 @@ if (next.value?.ecs) {
             formatIpInfo(data),
         );
     } catch {}
+}
+
+if (dnssec.value?.name) {
+    output.push(
+        header('DNSSEC'),
+        dnssec.value.color(dnssec.value.name),
+    );
 }
 
 if (location.value) {
