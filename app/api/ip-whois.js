@@ -17,7 +17,7 @@ export default class IPWhois {
     }
 
     /** */
-    static endpoints() {
+    static get endpoints() {
         return {
 
             /** @param {string} ip */

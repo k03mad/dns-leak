@@ -14,7 +14,7 @@ export default class NextDNS {
     }
 
     /** */
-    static endpoints() {
+    static get endpoints() {
         return {
 
             /** */

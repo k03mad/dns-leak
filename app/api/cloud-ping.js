@@ -14,7 +14,7 @@ export default class CloudPing {
     }
 
     /** */
-    static endpoints() {
+    static get endpoints() {
         return {
 
             /** */

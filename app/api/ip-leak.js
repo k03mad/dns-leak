@@ -34,7 +34,7 @@ export default class IPLeak {
     }
 
     /** */
-    static endpoints() {
+    static get endpoints() {
         return {
 
             /** @param {string} ip */

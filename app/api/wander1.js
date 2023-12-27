@@ -17,7 +17,7 @@ export default class Wander {
     }
 
     /** */
-    static endpoints() {
+    static get endpoints() {
         return {
 
             /** */
