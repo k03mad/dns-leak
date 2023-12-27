@@ -17,7 +17,7 @@ export default class IPWhois {
     }
 
     /** */
-    get _endpoints() {
+    static endpoints() {
         return {
 
             /** @param {string} ip */
@@ -31,7 +31,7 @@ export default class IPWhois {
      * @returns {Promise<object>}
      */
     async getIpInfo({ip = ''} = {}) {
-        const ipEndpoint = this._endpoints.ip(ip);
+        const ipEndpoint = IPWhois.endpoints.ip(ip);
 
         const {body} = await requestCache(ipEndpoint, {}, {
             expire: this._ipRequestsCacheExpireMs,

@@ -17,7 +17,7 @@ export default class Wander {
     }
 
     /** */
-    get _endpoints() {
+    static endpoints() {
         return {
 
             /** */
@@ -29,7 +29,7 @@ export default class Wander {
      * @returns {Promise<object>}
      */
     async checkDNSSEC() {
-        const testEndpoint = this._endpoints.sigfail();
+        const testEndpoint = Wander.endpoints.sigfail();
 
         try {
             await request(testEndpoint, {}, {

@@ -1,5 +1,5 @@
-export {default as CloudPing} from './CloudPing.js';
-export {default as IPLeak} from './IPLeak.js';
-export {default as IPWhois} from './IPWhois.js';
-export {default as NextDNS} from './NextDNS.js';
-export {default as Wander} from './Wander.js';
+export {default as CloudPing} from './cloud-ping.js';
+export {default as IPLeak} from './ip-leak.js';
+export {default as IPWhois} from './ip-whois.js';
+export {default as NextDNS} from './next-dns.js';
+export {default as Wander} from './wander1.js';

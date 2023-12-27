@@ -14,7 +14,7 @@ export default class NextDNS {
     }
 
     /** */
-    get _endpoints() {
+    static endpoints() {
         return {
 
             /** */
@@ -26,7 +26,7 @@ export default class NextDNS {
      * @returns {Promise<object>}
      */
     async getTest() {
-        const testEndpoint = this._endpoints.test();
+        const testEndpoint = NextDNS.endpoints.test();
 
         const {body} = await request(testEndpoint, {}, {
             rps: this._requestsRps,

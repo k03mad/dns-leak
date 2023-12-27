@@ -34,7 +34,7 @@ export default class IPLeak {
     }
 
     /** */
-    get _endpoints() {
+    static endpoints() {
         return {
 
             /** @param {string} ip */
@@ -64,7 +64,7 @@ export default class IPLeak {
      * @returns {Promise<object>}
      */
     async getIpInfo({ip = ''} = {}) {
-        const ipEndpoint = this._endpoints.ip(ip);
+        const ipEndpoint = IPLeak.endpoints.ip(ip);
 
         const {body} = await requestCache(ipEndpoint, {}, {
             expire: this._ipRequestsCacheExpireMs,
@@ -81,7 +81,7 @@ export default class IPLeak {
      * @returns {Promise<object>}
      */
     async getDnsInfoOnce({session = this._dnsSessionString, uniqString = this._dnsUniqString} = {}) {
-        const dnsEndpoint = this._endpoints.dns(session, uniqString);
+        const dnsEndpoint = IPLeak.endpoints.dns(session, uniqString);
 
         const {body} = await request(dnsEndpoint, {}, {
             queueBy: session,

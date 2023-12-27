@@ -14,7 +14,7 @@ export default class CloudPing {
     }
 
     /** */
-    get _endpoints() {
+    static endpoints() {
         return {
 
             /** */
@@ -29,7 +29,7 @@ export default class CloudPing {
      * @returns {Promise<string>}
      */
     async getCurrentIataCode() {
-        const testEndpoint = this._endpoints.edge();
+        const testEndpoint = CloudPing.endpoints.edge();
 
         const {headers} = await request(testEndpoint, {}, {
             rps: this._requestsRps,
@@ -42,7 +42,7 @@ export default class CloudPing {
      * @returns {Promise<object>}
      */
     async getAllLocations() {
-        const locationsEndpoint = this._endpoints.locations();
+        const locationsEndpoint = CloudPing.endpoints.locations();
 
         const {body} = await request(locationsEndpoint, {}, {
             rps: this._requestsRps,
