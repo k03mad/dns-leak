@@ -33,7 +33,7 @@
     "clean:modules": "rm -rf ./node_modules || true",
     "clean:eslint:cache": "rm -rf .eslintcache || true",
     "setup": "pnpm run clean && pnpm i",
-    "setup:prod": "pnpm run clean && pnpm i --omit=dev",
+    "setup:prod": "pnpm run clean && pnpm i --prod",
     "prepare": "husky install || true"
   }
 }
