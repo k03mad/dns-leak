@@ -10,7 +10,7 @@ Using API/tools:\
 ## Global
 
 ```bash
-pnpm i @k03mad/dns-leak -g
+npm i @k03mad/dns-leak -g
 ```
 
 ```bash
@@ -20,7 +20,7 @@ dns-leak
 ## API
 
 ```bash
-pnpm i @k03mad/dns-leak
+npm i @k03mad/dns-leak
 ```
 
 ```js
