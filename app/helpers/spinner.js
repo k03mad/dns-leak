@@ -11,8 +11,8 @@ export const spinner = {};
 export const start = (name, active) => {
     if (active) {
         spinner[name] = {
-            instance: ora().start(),
             counter: 0,
+            instance: ora().start(),
         };
 
         return spinner[name].instance;

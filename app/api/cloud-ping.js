@@ -26,19 +26,6 @@ export default class CloudPing {
     }
 
     /**
-     * @returns {Promise<string>}
-     */
-    async getCurrentIataCode() {
-        const testEndpoint = CloudPing.endpoints.edge();
-
-        const {headers} = await request(testEndpoint, {}, {
-            rps: this._requestsRps,
-        });
-
-        return headers['x-amz-cf-pop'];
-    }
-
-    /**
      * @returns {Promise<object>}
      */
     async getAllLocations() {
@@ -49,6 +36,19 @@ export default class CloudPing {
         });
 
         return body.nodes;
+    }
+
+    /**
+     * @returns {Promise<string>}
+     */
+    async getCurrentIataCode() {
+        const testEndpoint = CloudPing.endpoints.edge();
+
+        const {headers} = await request(testEndpoint, {}, {
+            rps: this._requestsRps,
+        });
+
+        return headers['x-amz-cf-pop'];
     }
 
     /**

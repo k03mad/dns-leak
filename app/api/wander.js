@@ -36,13 +36,13 @@ export default class Wander {
                 rps: this._requestsRps,
             });
 
-            return {name: 'OFF', code: 0, color: red};
+            return {code: 0, color: red, name: 'OFF'};
         } catch (err) {
             if (err.code === 'ESERVFAIL') {
-                return {name: 'ON', code: 1, color: green};
+                return {code: 1, color: green, name: 'ON'};
             }
 
-            return {name: 'unknown', code: -1, color: yellow};
+            return {code: -1, color: yellow, name: 'unknown'};
         }
     }
 
