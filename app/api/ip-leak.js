@@ -14,7 +14,7 @@ export default class IPLeak {
      * @param {number} [opts.dnsRequestsWaitBeforeLastMs] dns leak multi requests wait before the last request (with all ips gathered)
      * @param {number} [opts.dnsSessionStringLength] dns leak session string length, only works with 40 characters for now
      * @param {number} [opts.dnsUniqStringLength] dns leak unique string length for subdomain
-     * @param {number} [opts.ipRequestsCacheExpireMs] ip info requests cache ttl ms for same ip
+     * @param {number} [opts.ipRequestsCacheExpireSec] ip info requests cache ttl ms for same ip
      * @param {number} [opts.requestsRps] parallel requests rps
      */
     constructor({
@@ -22,14 +22,14 @@ export default class IPLeak {
         dnsRequestsWaitBeforeLastMs = 2000,
         dnsSessionStringLength = 40,
         dnsUniqStringLength = 20,
-        ipRequestsCacheExpireMs = 3_600_000,
+        ipRequestsCacheExpireSec = 3600,
         requestsRps = 2,
     } = {}) {
         this._dnsRequestsCount = dnsRequestsCount;
         this._dnsRequestsWaitBeforeLastMs = dnsRequestsWaitBeforeLastMs;
         this._dnsSessionStringLength = dnsSessionStringLength;
         this._dnsUniqStringLength = dnsUniqStringLength;
-        this._ipRequestsCacheExpireMs = ipRequestsCacheExpireMs;
+        this._ipRequestsCacheExpireSec = ipRequestsCacheExpireSec;
         this._requestsRps = requestsRps;
     }
 
@@ -108,7 +108,7 @@ export default class IPLeak {
         const ipEndpoint = IPLeak.endpoints.ip(ip);
 
         const {body} = await requestCache(ipEndpoint, {}, {
-            expire: this._ipRequestsCacheExpireMs,
+            expire: this._ipRequestsCacheExpireSec,
             rps: this._requestsRps,
         });
 
