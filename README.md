@@ -16,15 +16,3 @@ npm i @k03mad/dns-leak -g
 ```bash
 dns-leak
 ```
-
-## API
-
-```bash
-npm i @k03mad/dns-leak
-```
-
-```js
-import {CloudPing, IPLeak, IPWhois, NextDNS} from '@k03mad/dns-leak';
-```
-
-Details at [./app/api](/app/api) folder

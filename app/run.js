@@ -1,20 +1,21 @@
 #!/usr/bin/env node
 
-import {CloudPing, IPLeak, IPWhois, NextDNS, Wander} from './api/_index.js';
+import {ip2geo} from '@k03mad/ip2geo';
+
+import {CloudPing, IPLeak, NextDNS, Wander} from './api/_index.js';
 import {log} from './helpers/log.js';
 import * as spinner from './helpers/spinner.js';
 import {formatIpInfo, formatLocationInfo, header} from './helpers/text.js';
 
 const LeakApi = new IPLeak();
 const NextApi = new NextDNS();
-const WhoisApi = new IPWhois();
 const CloudPingApi = new CloudPing();
 const WanderApi = new Wander();
 
-const [leak, next, whois, location, dnssec] = await Promise.allSettled([
+const [leak, next, geoip, location, dnssec] = await Promise.allSettled([
     LeakApi.getDnsInfoMulti({isSpinnerEnabled: true}),
     NextApi.getTest(),
-    WhoisApi.getIpInfo(),
+    ip2geo(),
     CloudPingApi.getCurrentLocation(),
     WanderApi.checkDNSSEC(),
 ]);
@@ -31,7 +32,7 @@ const dnsIps = [
 
 const dnsIpsInfo = await Promise.all(dnsIps.map(async ip => {
     try {
-        const data = await WhoisApi.getIpInfo({ip});
+        const data = await ip2geo(ip);
         spinner.count(spinnerName, dnsIps.length);
         return data;
     } catch {}
@@ -44,10 +45,10 @@ const dnsIpsInfoFormatted = dnsIpsInfo
 
 const output = [];
 
-if (whois.value) {
+if (geoip.value) {
     output.push(
         header('IP'),
-        formatIpInfo(whois.value),
+        formatIpInfo(geoip.value),
     );
 }
 
@@ -60,7 +61,7 @@ if (dnsIpsInfoFormatted.length > 0) {
 
 if (next.value?.ecs) {
     try {
-        const data = await WhoisApi.getIpInfo({ip: next.value.ecs.replace(/\/.+/, '')});
+        const data = await ip2geo(next.value.ecs.replace(/\/.+/, ''));
         data.ip += ` (${next.value.ecs})`;
 
         output.push(
