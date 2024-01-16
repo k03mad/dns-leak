@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import {ip2geo} from '@k03mad/ip2geo';
+import {log} from '@k03mad/simple-log';
 
 import {CloudPing, IPLeak, NextDNS, Wander} from './api/_index.js';
-import {log} from './helpers/log.js';
 import * as spinner from './helpers/spinner.js';
 import {formatIpInfo, formatLocationInfo, header} from './helpers/text.js';
 
