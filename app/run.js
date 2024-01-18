@@ -4,7 +4,6 @@ import {ip2geo} from '@k03mad/ip2geo';
 import {log} from '@k03mad/simple-log';
 
 import {CloudPing, IPLeak, NextDNS, Wander} from './api/_index.js';
-import * as spinner from './helpers/spinner.js';
 import {formatIpInfo, formatLocationInfo, header} from './helpers/text.js';
 
 const LeakApi = new IPLeak();
@@ -20,9 +19,6 @@ const [leak, next, geoip, location, dnssec] = await Promise.allSettled([
     WanderApi.checkDNSSEC(),
 ]);
 
-const spinnerName = 'IP info';
-spinner.start(spinnerName, true);
-
 const dnsIps = [
     ...new Set([
         ...Object.keys(leak.value?.ip || []),
@@ -32,9 +28,7 @@ const dnsIps = [
 
 const dnsIpsInfo = await Promise.all(dnsIps.map(async ip => {
     try {
-        const data = await ip2geo(ip);
-        spinner.count(spinnerName, dnsIps.length);
-        return data;
+        return await ip2geo(ip);
     } catch {}
 }));
 
@@ -85,5 +79,4 @@ if (location.value) {
     );
 }
 
-spinner.stop(spinnerName);
 log(`\n${output.join('\n\n')}`);
