@@ -31,24 +31,24 @@ export const address = msg => blue(msg);
 
 /**
  * @param {object} [ipInfo]
- * @param {string} [ipInfo.city]
- * @param {string} [ipInfo.country]
- * @param {string} [ipInfo.emoji]
  * @param {string} [ipInfo.ip]
- * @param {string} [ipInfo.isp]
- * @param {string} [ipInfo.ispDomain]
- * @param {string} [ipInfo.org]
+ * @param {string} [ipInfo.country]
+ * @param {string} [ipInfo.countryEmoji]
+ * @param {string} [ipInfo.city]
  * @param {string} [ipInfo.region]
+ * @param {string} [ipInfo.connectionOrg]
+ * @param {string} [ipInfo.connectionIsp]
+ * @param {string} [ipInfo.connectionDomain]
  */
 export const formatIpInfo = ({
-    city,
-    country,
-    emoji,
     ip,
-    isp,
-    ispDomain,
-    org,
+    country,
+    countryEmoji,
+    city,
     region,
+    connectionOrg,
+    connectionIsp,
+    connectionDomain,
 } = {}) => {
     let output = '';
 
@@ -56,26 +56,26 @@ export const formatIpInfo = ({
         output += `${address(ip)}\n`;
     }
 
-    if (org) {
-        output += `${orgIsp(org)} `;
+    if (connectionOrg) {
+        output += `${orgIsp(connectionOrg)} `;
     }
 
-    if (isp && !org?.includes(isp)) {
-        if (org) {
+    if (connectionIsp && !connectionOrg?.includes(connectionIsp)) {
+        if (connectionOrg) {
             output += orgIsp('/ ');
         }
 
-        output += `${orgIsp(isp)} `;
+        output += `${orgIsp(connectionIsp)} `;
     }
 
-    if (ispDomain) {
-        output += info(`(${ispDomain})`);
+    if (connectionDomain) {
+        output += info(`(${connectionDomain})`);
     }
 
     output += '\n';
 
-    if (emoji) {
-        output += `${emoji}  `;
+    if (countryEmoji) {
+        output += `${countryEmoji}  `;
     }
 
     output += [

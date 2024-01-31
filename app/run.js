@@ -28,7 +28,7 @@ const dnsIps = [
 
 const dnsIpsInfo = await Promise.all(dnsIps.map(async ip => {
     try {
-        return await ip2geo(ip);
+        return await ip2geo({ip});
     } catch {}
 }));
 
@@ -55,7 +55,7 @@ if (dnsIpsInfoFormatted.length > 0) {
 
 if (next.value?.ecs) {
     try {
-        const data = await ip2geo(next.value.ecs.replace(/\/.+/, ''));
+        const data = await ip2geo({ip: next.value.ecs.replace(/\/.+/, '')});
         data.ip += ` (${next.value.ecs})`;
 
         output.push(
