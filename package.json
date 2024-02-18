@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "7.1.4",
+  "version": "7.2.0",
   "description": "DNS leak test",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@k03mad/ip2geo": "7.0.0",
-    "@k03mad/request": "5.6.0",
-    "@k03mad/simple-log": "2.1.0",
+    "@k03mad/request": "5.6.1",
+    "@k03mad/simple-log": "2.1.1",
     "chalk": "5.3.0",
     "country-locale-map": "1.9.0",
     "nanoid": "5.0.5",
@@ -38,7 +38,7 @@
     "clean": "npm run clean:modules && npm run clean:eslint:cache",
     "clean:modules": "rm -rf ./node_modules || true",
     "clean:eslint:cache": "rm -rf .eslintcache || true",
-    "setup": "npm run clean && pnpm i",
+    "setup": "npm run clean && npm i pnpm -g && pnpm i",
     "prepare": "husky || true"
   }
 }

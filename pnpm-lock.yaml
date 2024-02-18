@@ -9,11 +9,11 @@ dependencies:
     specifier: 7.0.0
     version: 7.0.0
   '@k03mad/request':
-    specifier: 5.6.0
-    version: 5.6.0
+    specifier: 5.6.1
+    version: 5.6.1
   '@k03mad/simple-log':
-    specifier: 2.1.0
-    version: 2.1.0
+    specifier: 2.1.1
+    version: 2.1.1
   chalk:
     specifier: 5.3.0
     version: 5.3.0
@@ -192,8 +192,27 @@ packages:
       - supports-color
     dev: false
 
+  /@k03mad/request@5.6.1:
+    resolution: {integrity: sha512-zczwuPlZ6/dkBJ/H0voqu9AfCVKxFUjZQ7O7AqPkQpDkeVXegOYHC6emFWSe/IvrUmwyGFYhi8MceTU4hbdkwA==}
+    engines: {node: '>=20'}
+    dependencies:
+      chalk: 5.3.0
+      debug: 4.3.4(supports-color@5.5.0)
+      got: 14.2.0
+      p-queue: 8.0.1
+      pretty-bytes: 6.1.1
+      strip-ansi: 7.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@k03mad/simple-date@1.0.0:
     resolution: {integrity: sha512-VMvhf0a73RRD1ZFF+/0Yo5/uD4ZQbrZ2pc7/HQIc+xfiJAZ4tCz9RNLw5DQVf4EAjnQxnuhf1xSB6ITepTu0+Q==}
+    engines: {node: '>=20'}
+    dev: false
+
+  /@k03mad/simple-date@1.0.1:
+    resolution: {integrity: sha512-2jf6gfmg8Td1iO4DZvFyoTNWW4UyltHPYDwoM77trFHqaRXT3dMuTHGf1MpsshnH+ce8ZETmF1d+DBpfT2EUNA==}
     engines: {node: '>=20'}
     dev: false
 
@@ -202,6 +221,13 @@ packages:
     engines: {node: '>=20'}
     dependencies:
       '@k03mad/simple-date': 1.0.0
+    dev: false
+
+  /@k03mad/simple-log@2.1.1:
+    resolution: {integrity: sha512-xhW93+N0Q9WEMWs+fD6WYgg+vwsUJlunLl2CafmYbfRbdsxVhEZ/k1pJ9gtJUHLVU/gY2xSTCzrFXWlxpnIxaQ==}
+    engines: {node: '>=20'}
+    dependencies:
+      '@k03mad/simple-date': 1.0.1
     dev: false
 
   /@nodelib/fs.scandir@2.1.5:
@@ -1533,6 +1559,23 @@ packages:
 
   /got@14.0.0:
     resolution: {integrity: sha512-X01vTgaX9SwaMq5DfImvS+3GMQFFs5HtrrlS9CuzUSzkxAf/tWGEyynuI+Qy7BjciMczZGjyVSmawYbP4eYhYA==}
+    engines: {node: '>=20'}
+    dependencies:
+      '@sindresorhus/is': 6.1.0
+      '@szmarczak/http-timer': 5.0.1
+      cacheable-lookup: 7.0.0
+      cacheable-request: 10.2.14
+      decompress-response: 6.0.0
+      form-data-encoder: 4.0.2
+      get-stream: 8.0.1
+      http2-wrapper: 2.2.1
+      lowercase-keys: 3.0.0
+      p-cancelable: 4.0.1
+      responselike: 3.0.0
+    dev: false
+
+  /got@14.2.0:
+    resolution: {integrity: sha512-dBq2KkHcQl3AwPoIWsLsQScCPpUgRulz1qZVthjPYKYOPmYfBnekR3vxecjZbm91Vc3JUGnV9mqFX7B+Fe2quw==}
     engines: {node: '>=20'}
     dependencies:
       '@sindresorhus/is': 6.1.0
