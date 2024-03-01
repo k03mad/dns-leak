@@ -18,8 +18,8 @@ dependencies:
     specifier: 5.3.0
     version: 5.3.0
   country-locale-map:
-    specifier: 1.9.0
-    version: 1.9.0
+    specifier: 1.9.4
+    version: 1.9.4
   nanoid:
     specifier: 5.0.6
     version: 5.0.6
@@ -386,7 +386,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.5.4
+      semver: 7.6.0
       ts-api-utils: 1.0.3(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
@@ -408,7 +408,7 @@ packages:
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.3
-      semver: 7.5.4
+      semver: 7.6.0
       ts-api-utils: 1.0.3(typescript@5.3.3)
       typescript: 5.3.3
     transitivePeerDependencies:
@@ -428,7 +428,7 @@ packages:
       '@typescript-eslint/types': 6.20.0
       '@typescript-eslint/typescript-estree': 6.20.0(typescript@5.3.3)
       eslint: 8.57.0
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -447,7 +447,7 @@ packages:
       '@typescript-eslint/types': 6.21.0
       '@typescript-eslint/typescript-estree': 6.21.0(typescript@5.3.3)
       eslint: 8.57.0
-      semver: 7.5.4
+      semver: 7.6.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -658,7 +658,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.4
+      semver: 7.6.0
     dev: true
 
   /cacheable-lookup@7.0.0:
@@ -796,11 +796,11 @@ packages:
       browserslist: 4.22.3
     dev: true
 
-  /country-locale-map@1.9.0:
-    resolution: {integrity: sha512-BQnks03YzZZG19YrtKqZma+Em4ikUdzy6NHUfJqYkMGiqa3lO5RwrJoRV1eMaYoWkH0BV8B9tWQCpo3TObcFSA==}
+  /country-locale-map@1.9.4:
+    resolution: {integrity: sha512-mRg2rrNfZBgJ09pfHloaFHRcVoKJ8FR/Q0wInYdA9+oBwA+rb6z9m7wtEXcmS2tbD65ZY68mjLTneq589RkTMw==}
     dependencies:
       cctx: 1.0.1
-      fuzzball: 1.4.0
+      fuzzball: 2.1.2
       nodemon: 3.0.3
     dev: false
 
@@ -1428,8 +1428,8 @@ packages:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
     dev: true
 
-  /fuzzball@1.4.0:
-    resolution: {integrity: sha512-ufKO0SHW65RSqZNu4rmLmraQVuwb8kVf8S/ICpkih/PfIff2YW3sa8zTvt7d7hJFXY1IvOOGJTeXxs69XLBd4Q==}
+  /fuzzball@2.1.2:
+    resolution: {integrity: sha512-wVBw/a73M3luaX6ZHt9vIoEKT/rLqBkzdBRhQzWw/IQyIt0qnqc0IAJDCkX3CLgj2tRIUAfgDUT8G6YuMpmNXg==}
     dependencies:
       heap: 0.2.7
       setimmediate: 1.0.5
@@ -2017,7 +2017,7 @@ packages:
       ignore-by-default: 1.0.1
       minimatch: 3.1.2
       pstree.remy: 1.1.8
-      semver: 7.5.4
+      semver: 7.6.0
       simple-update-notifier: 2.0.0
       supports-color: 5.5.0
       touch: 3.1.0
@@ -2435,6 +2435,7 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+    dev: true
 
   /semver@7.6.0:
     resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
@@ -2442,7 +2443,6 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
-    dev: true
 
   /set-function-length@1.2.0:
     resolution: {integrity: sha512-4DBHDoyHlM1IRPGYcoxexgh67y4ueR53FKV1yyxwFMY7aCqcN/38M1+SwZ/qJQ8iLv7+ck385ot4CcisOAPT9w==}
@@ -2496,7 +2496,7 @@ packages:
     resolution: {integrity: sha512-a2B9Y0KlNXl9u/vsW6sTIu9vGEpfKu2wRV6l1H3XEas/0gUIzGzBoP/IouTcUQbm9JWZLH3COxyn03TYlFax6w==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.4
+      semver: 7.6.0
     dev: false
 
   /slash@3.0.0:
