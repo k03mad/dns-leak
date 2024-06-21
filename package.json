@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "7.5.0",
+  "version": "7.6.0",
   "description": "DNS leak test",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -28,7 +28,7 @@
     "ora": "8.0.1"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "22.3.0",
+    "@k03mad/eslint-config": "22.4.0",
     "eslint": "8.57.0",
     "husky": "9.0.11"
   },
