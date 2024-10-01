@@ -21,8 +21,8 @@ importers:
         specifier: 5.3.0
         version: 5.3.0
       country-locale-map:
-        specifier: 1.9.7
-        version: 1.9.7
+        specifier: 1.9.8
+        version: 1.9.8
       nanoid:
         specifier: 5.0.7
         version: 5.0.7
@@ -381,8 +381,8 @@ packages:
   core-js-compat@3.37.1:
     resolution: {integrity: sha512-9TNiImhKvQqSUkOvk/mMRZzOANTiEVC7WaBNhHcKM7x+/5E1l5NvsysR19zuDQScE8k+kfQXWRN3AtS/eOSHpg==}
 
-  country-locale-map@1.9.7:
-    resolution: {integrity: sha512-7qh+vksgQSe3UcgozRW1X82K4688FDx923ubnejr59R9c2aLpnSUZLvC34NXfJTZME8//TS9DguWzRHTxxB9Eg==}
+  country-locale-map@1.9.8:
+    resolution: {integrity: sha512-9tY6O/XOH1M9V260GzPQz3bNd3BdZNbxgjByo7WP2zHc0FoAe9fRk/JX3wYU2PZcROHRAFSUB2TC2swWq7E62Q==}
 
   cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -1950,7 +1950,7 @@ snapshots:
     dependencies:
       browserslist: 4.23.3
 
-  country-locale-map@1.9.7:
+  country-locale-map@1.9.8:
     dependencies:
       fuzzball: 2.1.2
 
