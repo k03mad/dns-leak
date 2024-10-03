@@ -21,8 +21,8 @@ const [leak, next, geoip, location, dnssec] = await Promise.allSettled([
 
 const dnsIps = [
     ...new Set([
-        ...Object.keys(leak.value?.ip || []),
         next.value?.resolver || '',
+        ...Object.keys(leak.value?.ip || []),
     ]),
 ].filter(Boolean);
 

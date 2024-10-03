@@ -13,18 +13,6 @@ export default class CloudPing {
         this._requestsRps = requestsRps;
     }
 
-    /** */
-    static get endpoints() {
-        return {
-
-            /** */
-            edge: () => 'https://edge.feitsui.com/',
-
-            /** */
-            locations: () => 'https://www.cloudping.cloud/cloudfront-edge-locations.json',
-        };
-    }
-
     /**
      * @returns {Promise<object>}
      */
@@ -61,6 +49,18 @@ export default class CloudPing {
         ]);
 
         return {...locations[iata.replace(/\d.+/, '')], iata};
+    }
+
+    /** */
+    static get endpoints() {
+        return {
+
+            /** */
+            edge: () => 'https://edge.feitsui.com/',
+
+            /** */
+            locations: () => 'https://www.cloudping.cloud/cloudfront-edge-locations.json',
+        };
     }
 
 }

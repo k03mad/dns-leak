@@ -80,9 +80,9 @@ export const formatIpInfo = ({
 
     output += [
         ...new Set([
+            city,
             country,
             region,
-            city,
         ]),
     ].filter(Boolean).join(SEPARATOR);
 
