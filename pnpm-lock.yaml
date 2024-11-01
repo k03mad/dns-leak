@@ -34,8 +34,8 @@ importers:
         version: 8.1.0
     devDependencies:
       '@k03mad/eslint-config':
-        specifier: 25.6.2
-        version: 25.6.2(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@8.57.1))
+        specifier: 25.6.4
+        version: 25.6.4(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@8.57.1))
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -748,8 +748,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@k03mad/eslint-config@25.6.2':
-    resolution: {integrity: sha512-88dIIRm55Xusk0ndWNqSUBv7RhIJ2WOKXnhJDhhOPyrTuycU4TXlYUsjXLxWVXpno7H6y4czSdCe8Nai/fTxow==}
+  '@k03mad/eslint-config@25.6.4':
+    resolution: {integrity: sha512-1Y62MN2PrTrofGNK8d5sxdVbO9bZMJlYguFfAwbiew8jMNyiRrPCxYi3HBctgyEBCZaTaBl6OxIC0XkTk4vw1w==}
     engines: {node: '>=20'}
 
   '@k03mad/ip2geo@10.4.0':
@@ -3448,7 +3448,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@k03mad/eslint-config@25.6.2(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@8.57.1))':
+  '@k03mad/eslint-config@25.6.4(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.5.4))(eslint@8.57.1)(typescript@5.5.4)(vue-eslint-parser@9.4.3(eslint@8.57.1))':
     dependencies:
       '@eslint/js': 8.57.0
       '@stylistic/eslint-plugin': 2.8.0(eslint@8.57.1)(typescript@5.5.4)
