@@ -24,8 +24,8 @@ importers:
         specifier: 1.9.8
         version: 1.9.8
       nanoid:
-        specifier: 5.0.7
-        version: 5.0.7
+        specifier: 5.0.8
+        version: 5.0.8
       nanoid-dictionary:
         specifier: 5.0.0-beta.1
         version: 5.0.0-beta.1
@@ -1434,6 +1434,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@10.1.0:
@@ -1966,8 +1967,8 @@ packages:
   nanoid-dictionary@5.0.0-beta.1:
     resolution: {integrity: sha512-xBkL9zzkNjzJ/UnmWyiOUDVX/COoi05eS0oU28RYKFFQhdnzO5dTOPbVZ/fCFgIOGr1zNinDHJ68mm/KQfcgcw==}
 
-  nanoid@5.0.7:
-    resolution: {integrity: sha512-oLxFY2gd2IqnjcYyOXD8XGCftpGtZP2AbHbOkthDkvRywH5ayNtPVy9YlOPcHckXzbLTCHpkb7FB+yuxKV13pQ==}
+  nanoid@5.0.8:
+    resolution: {integrity: sha512-TcJPw+9RV9dibz1hHUzlLVy8N4X9TnwirAjrU08Juo6BNKggzVfP2ZJ/3ZUSq15Xl5i85i+Z89XBO90pB2PghQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
 
@@ -4934,7 +4935,7 @@ snapshots:
 
   nanoid-dictionary@5.0.0-beta.1: {}
 
-  nanoid@5.0.7: {}
+  nanoid@5.0.8: {}
 
   natural-compare-lite@1.4.0: {}
 
