@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 10.4.0
-        version: 10.4.0
+        specifier: 10.5.0
+        version: 10.5.0
       '@k03mad/request':
-        specifier: 6.3.0
-        version: 6.3.0
+        specifier: 6.4.0
+        version: 6.4.0
       '@k03mad/simple-log':
         specifier: 4.2.0
         version: 4.2.0
@@ -30,8 +30,8 @@ importers:
         specifier: 5.0.0-beta.1
         version: 5.0.0-beta.1
       ora:
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 8.1.1
+        version: 8.1.1
     devDependencies:
       '@k03mad/eslint-config':
         specifier: 25.6.4
@@ -752,13 +752,17 @@ packages:
     resolution: {integrity: sha512-1Y62MN2PrTrofGNK8d5sxdVbO9bZMJlYguFfAwbiew8jMNyiRrPCxYi3HBctgyEBCZaTaBl6OxIC0XkTk4vw1w==}
     engines: {node: '>=20'}
 
-  '@k03mad/ip2geo@10.4.0':
-    resolution: {integrity: sha512-PA1jIFWB5ugqasZYBTB651bLQlZ65r7gzcm+1KQOis814lepT+QLCcrlNm5kDnFteExW74m0WyaDh+At7JdcZA==}
+  '@k03mad/ip2geo@10.5.0':
+    resolution: {integrity: sha512-WF0D169do08etPgiS113gS8FgU+M9Ia3HepfujHpg6Q2DQjjjvULxEfna6WO+pttAC2KIPRb92n+2TgFLhBkUQ==}
     engines: {node: '>=20'}
     hasBin: true
 
   '@k03mad/request@6.3.0':
     resolution: {integrity: sha512-J5JeQt8yPB4eU7lq8LEwLleGFdYVu7VTxAosTvfQ6qdb2BuqRTepnFEwikCTVgEeAAGyfO+EWK9IYXpjIB42Og==}
+    engines: {node: '>=20'}
+
+  '@k03mad/request@6.4.0':
+    resolution: {integrity: sha512-6PsBP+jQqT2jfyoB3lWKxDz2qTcXfsecLwzwmyMzbD3+yTDL6J0f2AaRnLXgPKg88XiapoCrPVURkBLGsaJTaA==}
     engines: {node: '>=20'}
 
   '@k03mad/simple-date@3.1.0':
@@ -796,6 +800,10 @@ packages:
 
   '@sindresorhus/is@7.0.0':
     resolution: {integrity: sha512-WDTlVTyvFivSOuyvMeedzg2hdoBLZ3f1uNVuEida2Rl9BrfjrIRjWA/VZIrMRLvSwJYCAlCRA3usDt1THytxWQ==}
+    engines: {node: '>=18'}
+
+  '@sindresorhus/is@7.0.1':
+    resolution: {integrity: sha512-QWLl2P+rsCJeofkDNIT3WFmb6NrRud1SUYW8dIhXK/46XFV8Q/g7Bsvib0Askb0reRLe+WYPeeE+l5cH7SlkuQ==}
     engines: {node: '>=18'}
 
   '@stylistic/eslint-plugin@2.8.0':
@@ -1599,6 +1607,10 @@ packages:
     resolution: {integrity: sha512-+Te/qEZ6hr7i+f0FNgXx/6WQteSM/QqueGvxeYQQFm0GDfoxLVJ/oiwUKYMTeioColWUTdewZ06hmrBjw6F7tw==}
     engines: {node: '>=20'}
 
+  got@14.4.4:
+    resolution: {integrity: sha512-tqiF7eSgTBwQkxb1LxsEpva8TaMYVisbhplrFVmw9GQE3855Z+MH/mnsXLLOkDxR6hZJRFMj5VTAZ8lmTF8ZOA==}
+    engines: {node: '>=20'}
+
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
@@ -2035,8 +2047,8 @@ packages:
     resolution: {integrity: sha512-6IpQ7mKUxRcZNLIObR0hz7lxsapSSIYNZJwXPGeF0mTVqGKFIXj1DQcMoT22S3ROcLyY/rz0PWaWZ9ayWmad9g==}
     engines: {node: '>= 0.8.0'}
 
-  ora@8.1.0:
-    resolution: {integrity: sha512-GQEkNkH/GHOhPFXcqZs3IDahXEQcQxsSjEkK4KvEEST4t7eNzoMjxTzef+EZ+JluDEV+Raoi3WQ2CflnRdSVnQ==}
+  ora@8.1.1:
+    resolution: {integrity: sha512-YWielGi1XzG1UTvOaCFaNgEnuhZVMSHYkW/FQ7UX8O26PtlpdM84c0f7wLPlkvx2RfiQmnzd61d/MGxmpQeJPw==}
     engines: {node: '>=18'}
 
   p-cancelable@4.0.1:
@@ -2442,6 +2454,10 @@ packages:
 
   type-fest@4.23.0:
     resolution: {integrity: sha512-ZiBujro2ohr5+Z/hZWHESLz3g08BBdrdLMieYFULJO+tWc437sn8kQsWLJoZErY8alNhxre9K4p3GURAG11n+w==}
+    engines: {node: '>=16'}
+
+  type-fest@4.27.0:
+    resolution: {integrity: sha512-3IMSWgP7C5KSQqmo1wjhKrwsvXAtF33jO3QY+Uy++ia7hqvgSK6iXbbg5PbDBc1P2ZbNEDgejOrN4YooXvhwCw==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -3474,7 +3490,7 @@ snapshots:
       - typescript
       - vue-eslint-parser
 
-  '@k03mad/ip2geo@10.4.0':
+  '@k03mad/ip2geo@10.5.0':
     dependencies:
       '@k03mad/request': 6.3.0
       '@k03mad/simple-log': 4.2.0
@@ -3489,6 +3505,17 @@ snapshots:
       chalk: 5.3.0
       debug: 4.3.7
       got: 14.4.2
+      p-queue: 8.0.1
+      pretty-bytes: 6.1.1
+      strip-ansi: 7.1.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@k03mad/request@6.4.0':
+    dependencies:
+      chalk: 5.3.0
+      debug: 4.3.7
+      got: 14.4.4
       p-queue: 8.0.1
       pretty-bytes: 6.1.1
       strip-ansi: 7.1.0
@@ -3524,6 +3551,8 @@ snapshots:
   '@sec-ant/readable-stream@0.4.1': {}
 
   '@sindresorhus/is@7.0.0': {}
+
+  '@sindresorhus/is@7.0.1': {}
 
   '@stylistic/eslint-plugin@2.8.0(eslint@8.57.1)(typescript@5.5.4)':
     dependencies:
@@ -4628,6 +4657,20 @@ snapshots:
       responselike: 3.0.0
       type-fest: 4.23.0
 
+  got@14.4.4:
+    dependencies:
+      '@sindresorhus/is': 7.0.1
+      '@szmarczak/http-timer': 5.0.1
+      cacheable-lookup: 7.0.0
+      cacheable-request: 12.0.1
+      decompress-response: 6.0.0
+      form-data-encoder: 4.0.2
+      http2-wrapper: 2.2.1
+      lowercase-keys: 3.0.0
+      p-cancelable: 4.0.1
+      responselike: 3.0.0
+      type-fest: 4.27.0
+
   graceful-fs@4.2.11: {}
 
   graphemer@1.4.0: {}
@@ -5012,7 +5055,7 @@ snapshots:
       type-check: 0.4.0
       word-wrap: 1.2.5
 
-  ora@8.1.0:
+  ora@8.1.1:
     dependencies:
       chalk: 5.3.0
       cli-cursor: 5.0.0
@@ -5430,6 +5473,8 @@ snapshots:
   type-fest@0.8.1: {}
 
   type-fest@4.23.0: {}
+
+  type-fest@4.27.0: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
