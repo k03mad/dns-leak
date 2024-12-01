@@ -15,8 +15,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0
       '@k03mad/simple-log':
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.1.0
+        version: 5.1.0
       chalk:
         specifier: 5.3.0
         version: 5.3.0
@@ -146,16 +146,16 @@ packages:
     resolution: {integrity: sha512-IiWr+8p+C4UybZnRCGiNSRqft4NOdfFzpAxTnCs8wmc9ExkZ8fCSM3bpIf+K//HCg3OYhet7/kIY1fo+wSQYlQ==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-date@4.0.0':
-    resolution: {integrity: sha512-yngBMsp5zicI1Q+oPErNqdEUCCS3l5LRdtWfLhr4WUp9PAeU4TNBbp1udQd2revr9GOk/17W/d5JtbmptkBzrg==}
+  '@k03mad/simple-date@4.1.0':
+    resolution: {integrity: sha512-asGjWfxYwSNawN6j+jtBu/8ah+Gj+PlJC5U1rPM+QSPFzrs56tZzi6GaggtjbNfwNPC+hcmBqRSynKxkYFNetw==}
     engines: {node: '>=22'}
 
   '@k03mad/simple-log@4.2.0':
     resolution: {integrity: sha512-NcOLd1qVmbU6PZKnSwbtpmLV346oPR0A8TUkWL18eeDwiR6C98y1yuYwt32ryyz3c+kjGEeT6eA+FUeDP5C+VQ==}
     engines: {node: '>=20'}
 
-  '@k03mad/simple-log@5.0.0':
-    resolution: {integrity: sha512-jp2jrRX+tXb3Nb2v4v1VSrAkBBlMPuWb5igO52RPWckdmSvcfAQ4MuIrrotuW+hxnqaOB2nZ8F90G3owR4aXKA==}
+  '@k03mad/simple-log@5.1.0':
+    resolution: {integrity: sha512-O/RTIL2W4mS5ubloZ4Ds+4DpB/oWqqaxHjCTEqwEF8/q4Zukey6ppnYzUkDPLSoM2jDMuJX0OFVAfvYCdShJFg==}
     engines: {node: '>=22'}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1369,15 +1369,15 @@ snapshots:
 
   '@k03mad/simple-date@3.1.0': {}
 
-  '@k03mad/simple-date@4.0.0': {}
+  '@k03mad/simple-date@4.1.0': {}
 
   '@k03mad/simple-log@4.2.0':
     dependencies:
       '@k03mad/simple-date': 3.1.0
 
-  '@k03mad/simple-log@5.0.0':
+  '@k03mad/simple-log@5.1.0':
     dependencies:
-      '@k03mad/simple-date': 4.0.0
+      '@k03mad/simple-date': 4.1.0
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -1860,8 +1860,8 @@ snapshots:
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.12.1
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn: 8.14.0
+      acorn-jsx: 5.3.2(acorn@8.14.0)
       eslint-visitor-keys: 3.4.3
     optional: true
 
