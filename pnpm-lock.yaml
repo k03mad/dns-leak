@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 11.2.1
-        version: 11.2.1
+        specifier: 11.5.1
+        version: 11.5.1
       '@k03mad/request':
         specifier: 7.6.0
         version: 7.6.0
@@ -123,13 +123,17 @@ packages:
     resolution: {integrity: sha512-VWn7bN3pSepxdtH2wVQi5QagRqG6PMmYUgz8pZKR5I1JwTUEKJoNQTqztjOnTejao7yuaWf+x/vJwzHE1txqNQ==}
     engines: {node: '>=22'}
 
-  '@k03mad/ip2geo@11.2.1':
-    resolution: {integrity: sha512-v/srZ/9qR58d5a4bg9aCX5kge4DD3Cl0us2Iybt05yZR6f88G5Lg1ZZwS7oRff4dpmYr6b0MUN36rQKiNiBmbg==}
+  '@k03mad/ip2geo@11.5.1':
+    resolution: {integrity: sha512-Cmwdv85BBmTtpg86Mpkn3d7p899Y/TzmcZ49EYfylVeyIvT8LLcckKbPJEBugfR3D3UBU+XYO1aKXtBI6Su3ig==}
     engines: {node: '>=22'}
     hasBin: true
 
   '@k03mad/request@7.6.0':
     resolution: {integrity: sha512-IEYtbL5Q7822CqqkgoDDiFhvpP5in5d6SR1VXhHeDFTuZPicOEZJVy+/fRtCW9WoPR/oHsYTwPbVa/IUIqwYpw==}
+    engines: {node: '>=22'}
+
+  '@k03mad/request@7.6.2':
+    resolution: {integrity: sha512-YcfIhilSbK1N0rXs53cozeKPk8mIfBBK2arYs+fZPIE0ZQDp1y2mQgzZqJMCNypq+ZEYtRjMjP0rlm6oyhf1zQ==}
     engines: {node: '>=22'}
 
   '@k03mad/simple-date@4.1.0':
@@ -327,6 +331,10 @@ packages:
     resolution: {integrity: sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
+  chalk@5.4.1:
+    resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+
   ci-info@4.0.0:
     resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==}
     engines: {node: '>=8'}
@@ -391,6 +399,15 @@ packages:
 
   debug@4.3.7:
     resolution: {integrity: sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ==}
+    engines: {node: '>=6.0'}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
+
+  debug@4.4.0:
+    resolution: {integrity: sha512-6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==}
     engines: {node: '>=6.0'}
     peerDependencies:
       supports-color: '*'
@@ -1266,12 +1283,12 @@ snapshots:
       - supports-color
       - typescript
 
-  '@k03mad/ip2geo@11.2.1':
+  '@k03mad/ip2geo@11.5.1':
     dependencies:
-      '@k03mad/request': 7.6.0
-      '@k03mad/simple-log': 5.1.0
-      chalk: 5.3.0
-      debug: 4.3.7
+      '@k03mad/request': 7.6.2
+      '@k03mad/simple-log': 5.2.0
+      chalk: 5.4.1
+      debug: 4.4.0
       is-ip: 5.0.1
     transitivePeerDependencies:
       - supports-color
@@ -1280,6 +1297,17 @@ snapshots:
     dependencies:
       chalk: 5.3.0
       debug: 4.3.7
+      got: 14.4.5
+      p-queue: 8.0.1
+      pretty-bytes: 6.1.1
+      strip-ansi: 7.1.0
+    transitivePeerDependencies:
+      - supports-color
+
+  '@k03mad/request@7.6.2':
+    dependencies:
+      chalk: 5.4.1
+      debug: 4.4.0
       got: 14.4.5
       p-queue: 8.0.1
       pretty-bytes: 6.1.1
@@ -1497,6 +1525,8 @@ snapshots:
 
   chalk@5.3.0: {}
 
+  chalk@5.4.1: {}
+
   ci-info@4.0.0: {}
 
   clean-regexp@1.0.0:
@@ -1550,6 +1580,10 @@ snapshots:
       ms: 2.1.3
 
   debug@4.3.7:
+    dependencies:
+      ms: 2.1.3
+
+  debug@4.4.0:
     dependencies:
       ms: 2.1.3
 
