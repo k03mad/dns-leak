@@ -23,7 +23,7 @@
     "@k03mad/simple-log": "5.2.1",
     "chalk": "5.4.1",
     "country-locale-map": "1.9.9",
-    "nanoid": "5.0.9",
+    "nanoid": "5.1.2",
     "nanoid-dictionary": "5.0.0-beta.1",
     "ora": "8.2.0"
   },
