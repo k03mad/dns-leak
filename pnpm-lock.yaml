@@ -24,8 +24,8 @@ importers:
         specifier: 1.9.9
         version: 1.9.9
       nanoid:
-        specifier: 5.0.9
-        version: 5.0.9
+        specifier: 5.1.2
+        version: 5.1.2
       nanoid-dictionary:
         specifier: 5.0.0-beta.1
         version: 5.0.0-beta.1
@@ -797,8 +797,8 @@ packages:
   nanoid-dictionary@5.0.0-beta.1:
     resolution: {integrity: sha512-xBkL9zzkNjzJ/UnmWyiOUDVX/COoi05eS0oU28RYKFFQhdnzO5dTOPbVZ/fCFgIOGr1zNinDHJ68mm/KQfcgcw==}
 
-  nanoid@5.0.9:
-    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
+  nanoid@5.1.2:
+    resolution: {integrity: sha512-b+CiXQCNMUGe0Ri64S9SXFcP9hogjAJ2Rd6GdVxhPLRm7mhGaM7VgOvCAJ1ZshfHbqVDI3uqTI5C8/GaKuLI7g==}
     engines: {node: ^18 || >=20}
     hasBin: true
 
@@ -1933,7 +1933,7 @@ snapshots:
 
   nanoid-dictionary@5.0.0-beta.1: {}
 
-  nanoid@5.0.9: {}
+  nanoid@5.1.2: {}
 
   natural-compare@1.4.0: {}
 
