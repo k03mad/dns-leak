@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 12.0.0
-        version: 12.0.0
+        specifier: 12.1.0
+        version: 12.1.0
       '@k03mad/request':
         specifier: 7.8.0
         version: 7.8.0
@@ -119,8 +119,8 @@ packages:
     resolution: {integrity: sha512-HGaRSeC2iNnWl4IRZGqmLAp569r+ZwVdltDBfdUUoVxyUCun3+LppnO3RW+fKrDIrR4eQY6RO9OZK46jbPxOPQ==}
     engines: {node: '>=22'}
 
-  '@k03mad/ip2geo@12.0.0':
-    resolution: {integrity: sha512-WguTixQdjHrQZxvMAR8tnss3Z/8kpdlGA9PNQNGmfPZ1v2Z0UYhTR2trzDo9YW+kMkyR95PmN/z6C7FYreWFJg==}
+  '@k03mad/ip2geo@12.1.0':
+    resolution: {integrity: sha512-368EaeZg2FSsSyAvLtXiSQBUrrSRWTgphwdoImkje58W76ZEpTC0K9DAkgwUi3tkb5jjMEMMp2XT1vLKkFQSzg==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -1205,7 +1205,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@k03mad/ip2geo@12.0.0':
+  '@k03mad/ip2geo@12.1.0':
     dependencies:
       '@k03mad/request': 7.8.0
       '@k03mad/simple-log': 5.2.1
