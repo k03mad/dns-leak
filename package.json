@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "8.5.0",
+  "version": "8.6.0",
   "description": "DNS leak test",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -18,18 +18,18 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@k03mad/ip2geo": "12.2.0",
-    "@k03mad/request": "7.9.0",
+    "@k03mad/ip2geo": "12.3.0",
+    "@k03mad/request": "7.10.0",
     "@k03mad/simple-log": "5.3.0",
     "chalk": "5.4.1",
     "country-locale-map": "1.9.9",
     "nanoid": "5.1.5",
-    "nanoid-dictionary": "5.0.0-beta.1",
+    "nanoid-dictionary": "5.0.0",
     "ora": "8.2.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "28.8.0",
-    "eslint": "9.23.0",
+    "@k03mad/eslint-config": "28.10.0",
+    "eslint": "9.26.0",
     "husky": "9.1.7"
   },
   "scripts": {
