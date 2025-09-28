@@ -34,7 +34,7 @@ const dnsIpsInfo = await Promise.all(dnsIps.map(async ip => {
 
 const dnsIpsInfoFormatted = dnsIpsInfo
     .filter(Boolean)
-    .sort((a, b) => a?.ip?.localeCompare(b?.ip))
+    .toSorted((a, b) => a?.ip?.localeCompare(b?.ip))
     .flatMap(data => formatIpInfo(data));
 
 const output = [];
