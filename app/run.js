@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import {ip2geo} from '@k03mad/ip2geo';
-import {log} from '@k03mad/simple-log';
 
 import {CloudPing, IPLeak, NextDNS, Wander} from './api/_index.js';
 import {formatIpInfo, formatLocationInfo, header} from './helpers/text.js';
@@ -79,4 +78,4 @@ if (location.value) {
     );
 }
 
-log(`\n${output.join('\n\n')}`);
+console.log(`\n${output.join('\n\n')}`);
