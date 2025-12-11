@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "8.20.0",
+  "version": "9.0.0",
   "description": "DNS leak test",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
@@ -15,7 +15,7 @@
   "license": "MIT",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "dependencies": {
     "@k03mad/ip2geo": "12.17.0",
