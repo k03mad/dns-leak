@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 18.0.0
-        version: 18.0.0
+        specifier: 18.0.1
+        version: 18.0.1
       '@k03mad/request':
-        specifier: 14.0.1
-        version: 14.0.1
+        specifier: 14.0.2
+        version: 14.0.2
       chalk:
         specifier: 5.6.2
         version: 5.6.2
@@ -31,8 +31,8 @@ importers:
         version: 9.3.0
     devDependencies:
       '@k03mad/oxlint-config':
-        specifier: 0.0.14
-        version: 0.0.14
+        specifier: 0.0.19
+        version: 0.0.19
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -45,21 +45,17 @@ importers:
 
 packages:
 
-  '@k03mad/ip2geo@18.0.0':
-    resolution: {integrity: sha512-9mK4ybEIrXxBwd/gM9IIxq+XESCbR3IV/EF1n7ZYQdiwWqStdXbqu7M1bDs8slYTszcEuts1DzBMZF+0Ave32Q==}
+  '@k03mad/ip2geo@18.0.1':
+    resolution: {integrity: sha512-8QyQvWWVLAHHWJRxmCFFwuPfIXbPPNly5H1O1sXkX2y8z6gnf3zAxuiIO/7lzOPodN8mpKUod0nl3RUaJ0iE8A==}
     engines: {node: '>=24'}
     hasBin: true
 
-  '@k03mad/oxlint-config@0.0.14':
-    resolution: {integrity: sha512-qjlIZOzUUUMUECiu6kALF/qwUOI8eDXX5r3eYUBHrxYRhEoe0V74F2j73XROkIIh2QxzGUoTmuxe+g9UbOdZGg==}
+  '@k03mad/oxlint-config@0.0.19':
+    resolution: {integrity: sha512-ANzydjYLmdFzA36ZiVZ0vaiLhCvAD9mvOnEVQCaIEigZVJm1XbHZqRBxcM9dG7lpcYnj18jfNzZHvTW8TkTFkQ==}
     engines: {node: '>=24'}
 
-  '@k03mad/request@13.0.0':
-    resolution: {integrity: sha512-5iQ/HbJiYeJGDx4P7rem24KibIR/689g5/e42Tn9RB7NexzxKkYktw9EOZ4cFhVJOLAi64dG9VN7mGDq+wZTkQ==}
-    engines: {node: '>=24'}
-
-  '@k03mad/request@14.0.1':
-    resolution: {integrity: sha512-gEOHRLqHtoS0rZYkmO153/PXBTKGXXbliQGmvmP0YhYFY48XpMFNFC0jy0yS07Gnq/hotcfAeBIgCCkoV5VsTQ==}
+  '@k03mad/request@14.0.2':
+    resolution: {integrity: sha512-R36mWI3Hemcp/KLznx4BszSn/5HmP4T04RVf32nze8MhyuGqgKoSFOq95PN4PW4Cxpl53sZ7drm+NTG3yixEgQ==}
     engines: {node: '>=24'}
 
   '@keyv/serialize@1.1.1':
@@ -385,8 +381,8 @@ packages:
   fuzzball@2.2.3:
     resolution: {integrity: sha512-sQDb3kjI7auA4YyE1YgEW85MTparcSgRgcCweUK06Cn0niY5lN+uhFiRUZKN4MQVGGiHxlbrYCA4nL1QjOXBLQ==}
 
-  get-east-asian-width@1.4.0:
-    resolution: {integrity: sha512-QZjmEOC+IT1uk6Rx0sX22V6uHWVwbdbxf1faPqJ1QhLdGgsRGCZoyaQBm/piRdJy/D2um6hM1UP7ZEeQ4EkP+Q==}
+  get-east-asian-width@1.5.0:
+    resolution: {integrity: sha512-CQ+bEO+Tva/qlmw24dCejulK5pMzVnUOFOijVogd3KQs07HnRIgp8TGipvCCRT06xeYEbpbgwaCxglFyiuIcmA==}
     engines: {node: '>=18'}
 
   get-stream@9.0.1:
@@ -538,8 +534,8 @@ packages:
     resolution: {integrity: sha512-reExS1kSGoElkextOcPkel4NE99S0BWxjUHQeDFnR8S993JxpPX7KU4MNmO19NXhlJp+8dmdCbKQVNgLJh2teA==}
     engines: {node: '>=18'}
 
-  string-width@8.1.0:
-    resolution: {integrity: sha512-Kxl3KJGb/gxkaUMOjRsQ8IrXiGW75O4E3RPjFIINOVH8AMl2SQ/yWdTzWwF3FevIX9LcMAjJW+GRwAlAbTSXdg==}
+  string-width@8.2.0:
+    resolution: {integrity: sha512-6hJPQ8N0V0P3SNmP6h2J99RLuzrWz2gvT7VnK5tKvrNqJoyS9W4/Fb8mo31UiPvy00z7DQXkP2hnKBVav76thw==}
     engines: {node: '>=20'}
 
   strip-ansi@7.1.2:
@@ -568,29 +564,18 @@ packages:
 
 snapshots:
 
-  '@k03mad/ip2geo@18.0.0':
+  '@k03mad/ip2geo@18.0.1':
     dependencies:
-      '@k03mad/request': 13.0.0
+      '@k03mad/request': 14.0.2
       chalk: 5.6.2
       debug: 4.4.3
       is-ip: 5.0.1
     transitivePeerDependencies:
       - supports-color
 
-  '@k03mad/oxlint-config@0.0.14': {}
+  '@k03mad/oxlint-config@0.0.19': {}
 
-  '@k03mad/request@13.0.0':
-    dependencies:
-      chalk: 5.6.2
-      debug: 4.4.3
-      got: 14.6.6
-      p-queue: 9.1.0
-      pretty-bytes: 7.1.0
-      strip-ansi: 7.1.2
-    transitivePeerDependencies:
-      - supports-color
-
-  '@k03mad/request@14.0.1':
+  '@k03mad/request@14.0.2':
     dependencies:
       chalk: 5.6.2
       debug: 4.4.3
@@ -777,7 +762,7 @@ snapshots:
       lodash: 4.17.23
       setimmediate: 1.0.5
 
-  get-east-asian-width@1.4.0: {}
+  get-east-asian-width@1.5.0: {}
 
   get-stream@9.0.1:
     dependencies:
@@ -863,7 +848,7 @@ snapshots:
       is-unicode-supported: 2.1.0
       log-symbols: 7.0.1
       stdin-discarder: 0.3.1
-      string-width: 8.1.0
+      string-width: 8.2.0
 
   oxfmt@0.34.0:
     dependencies:
@@ -941,9 +926,9 @@ snapshots:
 
   stdin-discarder@0.3.1: {}
 
-  string-width@8.1.0:
+  string-width@8.2.0:
     dependencies:
-      get-east-asian-width: 1.4.0
+      get-east-asian-width: 1.5.0
       strip-ansi: 7.1.2
 
   strip-ansi@7.1.2:
