@@ -2,37 +2,38 @@
   "name": "@k03mad/dns-leak",
   "version": "14.0.0",
   "description": "DNS leak test",
+  "license": "MIT",
   "maintainers": [
     "Kirill Molchanov <k03.mad@gmail.com"
   ],
-  "bin": {
-    "dns-leak": "app/run.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/k03mad/dns-leak.git"
   },
-  "license": "MIT",
+  "bin": {
+    "dns-leak": "app/run.js"
+  },
   "type": "module",
-  "engines": {
-    "node": ">=24"
+  "scripts": {
+    "lint": "oxlint --report-unused-disable-directives && oxfmt --check",
+    "prepare": "husky || true"
   },
   "dependencies": {
     "@k03mad/ip2geo": "18.0.0",
-    "@k03mad/request": "13.0.0",
+    "@k03mad/request": "14.0.1",
     "chalk": "5.6.2",
     "country-locale-map": "1.9.12",
     "nanoid": "5.1.6",
     "nanoid-dictionary": "5.0.0",
-    "ora": "9.1.0"
+    "ora": "9.3.0"
   },
   "devDependencies": {
-    "@k03mad/eslint-config": "34.1.0",
-    "eslint": "9.39.2",
-    "husky": "9.1.7"
+    "@k03mad/oxlint-config": "0.0.14",
+    "husky": "9.1.7",
+    "oxfmt": "0.34.0",
+    "oxlint": "1.49.0"
   },
-  "scripts": {
-    "lint": "eslint ./ --cache",
-    "prepare": "husky || true"
+  "engines": {
+    "node": ">=24"
   }
 }

@@ -19,17 +19,16 @@ const [leak, next, geoip, location, dnssec] = await Promise.allSettled([
 ]);
 
 const dnsIps = [
-    ...new Set([
-        next.value?.resolver || '',
-        ...Object.keys(leak.value?.ip || []),
-    ]),
+    ...new Set([next.value?.resolver || '', ...Object.keys(leak.value?.ip || [])]),
 ].filter(Boolean);
 
-const dnsIpsInfo = await Promise.all(dnsIps.map(async ip => {
-    try {
-        return await ip2geo({ip});
-    } catch {}
-}));
+const dnsIpsInfo = await Promise.all(
+    dnsIps.map(async ip => {
+        try {
+            return await ip2geo({ip});
+        } catch {}
+    }),
+);
 
 const dnsIpsInfoFormatted = dnsIpsInfo
     .filter(Boolean)
@@ -39,17 +38,11 @@ const dnsIpsInfoFormatted = dnsIpsInfo
 const output = [];
 
 if (geoip.value) {
-    output.push(
-        header('IP'),
-        formatIpInfo(geoip.value),
-    );
+    output.push(header('IP'), formatIpInfo(geoip.value));
 }
 
 if (dnsIpsInfoFormatted.length > 0) {
-    output.push(
-        header('DNS'),
-        ...dnsIpsInfoFormatted,
-    );
+    output.push(header('DNS'), ...dnsIpsInfoFormatted);
 }
 
 if (next.value?.ecs) {
@@ -57,25 +50,16 @@ if (next.value?.ecs) {
         const data = await ip2geo({ip: next.value.ecs.replace(/\/.+/, '')});
         data.ip += ` (${next.value.ecs})`;
 
-        output.push(
-            header('DNS ECS'),
-            formatIpInfo(data),
-        );
+        output.push(header('DNS ECS'), formatIpInfo(data));
     } catch {}
 }
 
 if (dnssec.value?.name) {
-    output.push(
-        header('DNSSEC'),
-        dnssec.value.color(dnssec.value.name),
-    );
+    output.push(header('DNSSEC'), dnssec.value.color(dnssec.value.name));
 }
 
 if (location.value) {
-    output.push(
-        header('CLOUDFRONT CDN'),
-        formatLocationInfo(location.value),
-    );
+    output.push(header('CLOUDFRONT CDN'), formatLocationInfo(location.value));
 }
 
 console.log(`\n${output.join('\n\n')}`);

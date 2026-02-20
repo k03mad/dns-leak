@@ -78,13 +78,7 @@ export const formatIpInfo = ({
         output += `${countryEmoji}  `;
     }
 
-    output += [
-        ...new Set([
-            city,
-            country,
-            region,
-        ]),
-    ].filter(Boolean).join(SEPARATOR);
+    output += [...new Set([city, country, region])].filter(Boolean).join(SEPARATOR);
 
     return output;
 };

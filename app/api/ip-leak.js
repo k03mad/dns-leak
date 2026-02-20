@@ -7,7 +7,6 @@ import * as spinner from '../helpers/spinner.js';
 
 /** */
 export default class IPLeak {
-
     /**
      * @param {object} [opts]
      * @param {number} [opts.dnsRequestsCount] dns leak multi requests count with one session
@@ -36,7 +35,6 @@ export default class IPLeak {
     /** */
     static get endpoints() {
         return {
-
             /**
              * @param {string} session
              * @param {string} uniq
@@ -70,10 +68,12 @@ export default class IPLeak {
 
         spinner.start(spinnerName, isSpinnerEnabled);
 
-        await Promise.all(arrayFromLen.map(async () => {
-            await this.getDnsInfoOnce({session});
-            spinner.count(spinnerName, this._dnsRequestsCount);
-        }));
+        await Promise.all(
+            arrayFromLen.map(async () => {
+                await this.getDnsInfoOnce({session});
+                spinner.count(spinnerName, this._dnsRequestsCount);
+            }),
+        );
 
         await sleep(this._dnsRequestsWaitBeforeLastMs);
         const info = await this.getDnsInfoOnce({session});
@@ -88,13 +88,20 @@ export default class IPLeak {
      * @param {string} [opts.uniqString]
      * @returns {Promise<object>}
      */
-    async getDnsInfoOnce({session = this._dnsSessionString, uniqString = this._dnsUniqString} = {}) {
+    async getDnsInfoOnce({
+        session = this._dnsSessionString,
+        uniqString = this._dnsUniqString,
+    } = {}) {
         const dnsEndpoint = IPLeak.endpoints.dns(session, uniqString);
 
-        const {body} = await request(dnsEndpoint, {}, {
-            queueBy: session,
-            rps: this._requestsRps,
-        });
+        const {body} = await request(
+            dnsEndpoint,
+            {},
+            {
+                queueBy: session,
+                rps: this._requestsRps,
+            },
+        );
 
         return body;
     }
@@ -107,12 +114,15 @@ export default class IPLeak {
     async getIpInfo({ip = ''} = {}) {
         const ipEndpoint = IPLeak.endpoints.ip(ip);
 
-        const {body} = await requestCache(ipEndpoint, {}, {
-            expire: this._ipRequestsCacheExpireSec,
-            rps: this._requestsRps,
-        });
+        const {body} = await requestCache(
+            ipEndpoint,
+            {},
+            {
+                expire: this._ipRequestsCacheExpireSec,
+                rps: this._requestsRps,
+            },
+        );
 
         return body;
     }
-
 }

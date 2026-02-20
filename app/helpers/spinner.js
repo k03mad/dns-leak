@@ -37,7 +37,7 @@ export const count = (name, total) => {
     spinner[name].counter++;
 
     const len = `${String(spinner[name].counter).padStart(String(total).length, '0')}/${total}`;
-    const percent = `${String((spinner[name].counter * 100 / total).toFixed(0)).padStart(2, '0')}%`;
+    const percent = `${String(((spinner[name].counter * 100) / total).toFixed(0)).padStart(2, '0')}%`;
     text(name, `${len} [${percent}]`);
 };
 

@@ -1,8 +1,3 @@
 {
-    "cSpell.words": [
-        "dnssec",
-        "DNSSEC",
-        "geoip",
-        "nvmrc"
-    ]
+  "cSpell.words": ["dnssec", "DNSSEC", "geoip", "nvmrc", "oxfmt", "oxlint"]
 }
