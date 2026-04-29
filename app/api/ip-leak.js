@@ -5,16 +5,17 @@ import {lowercase, numbers} from 'nanoid-dictionary';
 import {sleep} from '../helpers/promise.js';
 import * as spinner from '../helpers/spinner.js';
 
-/** */
 export default class IPLeak {
     /**
      * @param {object} [opts]
-     * @param {number} [opts.dnsRequestsCount] dns leak multi requests count with one session
-     * @param {number} [opts.dnsRequestsWaitBeforeLastMs] dns leak multi requests wait before the last request (with all ips gathered)
-     * @param {number} [opts.dnsSessionStringLength] dns leak session string length, only works with 40 characters for now
-     * @param {number} [opts.dnsUniqStringLength] dns leak unique string length for subdomain
-     * @param {number} [opts.ipRequestsCacheExpireSec] ip info requests cache ttl ms for same ip
-     * @param {number} [opts.requestsRps] parallel requests rps
+     * @param {number} [opts.dnsRequestsCount] Dns leak multi requests count with one session
+     * @param {number} [opts.dnsRequestsWaitBeforeLastMs] Dns leak multi requests wait before the
+     *   last request (with all ips gathered)
+     * @param {number} [opts.dnsSessionStringLength] Dns leak session string length, only works with
+     *   40 characters for now
+     * @param {number} [opts.dnsUniqStringLength] Dns leak unique string length for subdomain
+     * @param {number} [opts.ipRequestsCacheExpireSec] Ip info requests cache ttl ms for same ip
+     * @param {number} [opts.requestsRps] Parallel requests rps
      */
     constructor({
         dnsRequestsCount = 30,
@@ -32,7 +33,6 @@ export default class IPLeak {
         this._requestsRps = requestsRps;
     }
 
-    /** */
     static get endpoints() {
         return {
             /**
@@ -46,12 +46,10 @@ export default class IPLeak {
         };
     }
 
-    /** */
     get _dnsSessionString() {
         return customAlphabet(lowercase + numbers, this._dnsSessionStringLength)();
     }
 
-    /** */
     get _dnsUniqString() {
         return customAlphabet(lowercase + numbers, this._dnsUniqStringLength)();
     }

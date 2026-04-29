@@ -41,9 +41,7 @@ export const count = (name, total) => {
     text(name, `${len} [${percent}]`);
 };
 
-/**
- * @param {string} name
- */
+/** @param {string} name */
 export const stop = name => {
     spinner[name].instance.stop();
 };

@@ -1,18 +1,15 @@
 import {request} from '@k03mad/request';
 
-/** */
 export default class CloudPing {
     /**
      * @param {object} [opts]
-     * @param {number} [opts.requestsRps] parallel requests rps
+     * @param {number} [opts.requestsRps] Parallel requests rps
      */
     constructor({requestsRps = 2} = {}) {
         this._requestsRps = requestsRps;
     }
 
-    /**
-     * @returns {Promise<object>}
-     */
+    /** @returns {Promise<object>} */
     async getAllLocations() {
         const locationsEndpoint = CloudPing.endpoints.locations();
 
@@ -27,9 +24,7 @@ export default class CloudPing {
         return body.nodes;
     }
 
-    /**
-     * @returns {Promise<string>}
-     */
+    /** @returns {Promise<string>} */
     async getCurrentIataCode() {
         const testEndpoint = CloudPing.endpoints.edge();
 
@@ -44,9 +39,7 @@ export default class CloudPing {
         return headers['x-amz-cf-pop'];
     }
 
-    /**
-     * @returns {Promise<object>}
-     */
+    /** @returns {Promise<object>} */
     async getCurrentLocation() {
         const [iata, locations] = await Promise.all([
             this.getCurrentIataCode(),
@@ -56,13 +49,10 @@ export default class CloudPing {
         return {...locations[iata.replace(/\d.+/, '')], iata};
     }
 
-    /** */
     static get endpoints() {
         return {
-            /** */
             edge: () => 'https://edge.feitsui.com/',
 
-            /** */
             locations: () => 'https://www.cloudping.cloud/cloudfront-edge-locations.json',
         };
     }

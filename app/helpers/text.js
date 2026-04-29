@@ -4,29 +4,19 @@ import clm from 'country-locale-map';
 const {blue, gray, green, magenta, yellow} = chalk;
 const SEPARATOR = ' :: ';
 
-/**
- * @param {string} msg
- */
+/** @param {string} msg */
 export const header = msg => magenta.bold.bgBlackBright(` ${msg}`.padEnd(25, ' '));
 
-/**
- * @param {string} msg
- */
+/** @param {string} msg */
 export const bar = msg => yellow(msg);
 
-/**
- * @param {string} msg
- */
+/** @param {string} msg */
 export const info = msg => gray(msg);
 
-/**
- * @param {string} msg
- */
+/** @param {string} msg */
 export const orgIsp = msg => green(msg);
 
-/**
- * @param {string} msg
- */
+/** @param {string} msg */
 export const address = msg => blue(msg);
 
 /**
