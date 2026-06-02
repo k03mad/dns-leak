@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 19.3.1
-        version: 19.3.1
+        specifier: 19.3.3
+        version: 19.3.3
       '@k03mad/request':
-        specifier: 15.3.1
-        version: 15.3.1
+        specifier: 15.3.3
+        version: 15.3.3
       chalk:
         specifier: 5.6.2
         version: 5.6.2
@@ -31,8 +31,8 @@ importers:
         version: 9.4.0
     devDependencies:
       '@k03mad/oxlint-config':
-        specifier: 0.9.1
-        version: 0.9.1
+        specifier: 0.9.3
+        version: 0.9.3
       husky:
         specifier: 9.1.7
         version: 9.1.7
@@ -45,17 +45,17 @@ importers:
 
 packages:
 
-  '@k03mad/ip2geo@19.3.1':
-    resolution: {integrity: sha512-IYcKlSFvvbLFrzyobz0Qz2ZnAJwPyMAwhUrvzL0vZiVuFu5w15Bwedk+SGUDrPuzG3zoh4tzr0dqxTvol6jd5Q==}
+  '@k03mad/ip2geo@19.3.3':
+    resolution: {integrity: sha512-PT5m349oItcvtQkKofBXzxlRgozuqQvn+XSEd0zJtdX837EvUX0sMouY9OtbD6RY8ztUX6aMKeE8EVQAwThrDg==}
     engines: {node: '>=24'}
     hasBin: true
 
-  '@k03mad/oxlint-config@0.9.1':
-    resolution: {integrity: sha512-spW00PaElFxUaYMModJYizHFtAI4UKePxvm5dNyFBhE7tVsj8nq6cVWFyp8BtZpK7gYc0ApzwmIUDKR5z2Aqbg==}
+  '@k03mad/oxlint-config@0.9.3':
+    resolution: {integrity: sha512-Pi3nfjrJcfxN3vM0IaABZ2vdblbCMM9oXcQuwX/GYwLsbpQBNzj5LrQcaq8AtRf5/9p1mArz45Ky1tnQxLzCPg==}
     engines: {node: '>=24'}
 
-  '@k03mad/request@15.3.1':
-    resolution: {integrity: sha512-gKGHduk/QCld/+QXpT81tCLv1AL6bqzVjM6h/AGLzeuBSE9LIdWNKgCwLwyhy6T5fz+Q9G0SB1TR2hDylEwo5A==}
+  '@k03mad/request@15.3.3':
+    resolution: {integrity: sha512-/zRT41U6aUOTPZLE3NkyqZc+v0bf2qEppuRjMocSkbUBMflW1mGG8L048ntjZUXlmEB8k6kbKezpWzbSvEPCWg==}
     engines: {node: '>=24'}
 
   '@keyv/serialize@1.1.1':
@@ -583,18 +583,18 @@ packages:
 
 snapshots:
 
-  '@k03mad/ip2geo@19.3.1':
+  '@k03mad/ip2geo@19.3.3':
     dependencies:
-      '@k03mad/request': 15.3.1
+      '@k03mad/request': 15.3.3
       chalk: 5.6.2
       debug: 4.4.3
       is-ip: 5.0.1
     transitivePeerDependencies:
       - supports-color
 
-  '@k03mad/oxlint-config@0.9.1': {}
+  '@k03mad/oxlint-config@0.9.3': {}
 
-  '@k03mad/request@15.3.1':
+  '@k03mad/request@15.3.3':
     dependencies:
       chalk: 5.6.2
       debug: 4.4.3
