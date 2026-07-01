@@ -25,7 +25,7 @@
     "country-locale-map": "1.9.12",
     "nanoid": "5.1.11",
     "nanoid-dictionary": "5.0.0",
-    "ora": "9.4.0"
+    "ora": "9.4.1"
   },
   "devDependencies": {
     "@k03mad/oxlint-config": "0.9.3",
