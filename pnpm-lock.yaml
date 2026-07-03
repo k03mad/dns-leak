@@ -9,11 +9,11 @@ importers:
   .:
     dependencies:
       '@k03mad/ip2geo':
-        specifier: 20.1.0
-        version: 20.1.0
+        specifier: 20.1.1
+        version: 20.1.1
       '@k03mad/request':
-        specifier: 15.5.0
-        version: 15.5.0
+        specifier: 15.6.0
+        version: 15.6.0
       chalk:
         specifier: 5.6.2
         version: 5.6.2
@@ -201,8 +201,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@k03mad/ip2geo@20.1.0':
-    resolution: {integrity: sha512-4ywBOg9cdqVR/pAuCbY0Bn4SEAjJZArF1+ZGhEaMkJDWVpS5Ecrp/tQ9HdGw0bjNTqBIKsOFfy5ZRcARahwuaw==}
+  '@k03mad/ip2geo@20.1.1':
+    resolution: {integrity: sha512-+WTf04SMCF1MBbs3n5v4nR3DovfzPoytKj0d5gFogRvm9gG1LkGd4hYN2VnOsKw8FmSAMFj+rKwqO7GUm6S0xA==}
     engines: {node: '>=24'}
     hasBin: true
 
@@ -210,8 +210,8 @@ packages:
     resolution: {integrity: sha512-UMhn3E7hDXm8Hrgzn/PriwkVLuHYs248H3s2rSJS+v144bEHoblwua7CC8TRDR5yS69XTtxDayeQxOPgTdFYXw==}
     engines: {node: '>=24'}
 
-  '@k03mad/request@15.5.0':
-    resolution: {integrity: sha512-RMo9MSEmqZy6ynLHMj6A9Iaboe/NRzKslf8LERhisvssDUVHVG0f9GZMOWJnWsAR6MqfUgDlzEcwS8RBSquOtQ==}
+  '@k03mad/request@15.6.0':
+    resolution: {integrity: sha512-5xTe4HL3QLGws8jyqt16xCRHGzas82xCqvcTlhmf1ewOP2rB1gkPF8JwHN6nN+nk6I5qS/YOpSC1iw3iuHc1KA==}
     engines: {node: '>=24'}
 
   '@keyv/serialize@1.1.1':
@@ -832,7 +832,7 @@ snapshots:
   '@esbuild/win32-x64@0.28.1':
     optional: true
 
-  '@k03mad/ip2geo@20.1.0':
+  '@k03mad/ip2geo@20.1.1':
     dependencies:
       chalk: 5.6.2
       debug: 4.4.3
@@ -843,7 +843,7 @@ snapshots:
 
   '@k03mad/oxlint-config@0.11.0': {}
 
-  '@k03mad/request@15.5.0':
+  '@k03mad/request@15.6.0':
     dependencies:
       chalk: 5.6.2
       debug: 4.4.3
