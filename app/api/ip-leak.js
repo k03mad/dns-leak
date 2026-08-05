@@ -1,6 +1,6 @@
-import {request, requestCache} from '@k03mad/request';
 import {customAlphabet} from 'nanoid';
 import {lowercase, numbers} from 'nanoid-dictionary';
+import pMap from 'p-map';
 
 import {sleep} from '../helpers/promise.js';
 import * as spinner from '../helpers/spinner.js';
@@ -14,22 +14,19 @@ export default class IPLeak {
      * @param {number} [opts.dnsSessionStringLength] Dns leak session string length, only works with
      *   40 characters for now
      * @param {number} [opts.dnsUniqStringLength] Dns leak unique string length for subdomain
-     * @param {number} [opts.ipRequestsCacheExpireSec] Ip info requests cache ttl ms for same ip
-     * @param {number} [opts.requestsRps] Parallel requests rps
+     * @param {number} [opts.requestsRps] Parallel DNS requests concurrency
      */
     constructor({
         dnsRequestsCount = 30,
         dnsRequestsWaitBeforeLastMs = 2000,
         dnsSessionStringLength = 40,
         dnsUniqStringLength = 20,
-        ipRequestsCacheExpireSec = 3600,
         requestsRps = 2,
     } = {}) {
         this._dnsRequestsCount = dnsRequestsCount;
         this._dnsRequestsWaitBeforeLastMs = dnsRequestsWaitBeforeLastMs;
         this._dnsSessionStringLength = dnsSessionStringLength;
         this._dnsUniqStringLength = dnsUniqStringLength;
-        this._ipRequestsCacheExpireSec = ipRequestsCacheExpireSec;
         this._requestsRps = requestsRps;
     }
 
@@ -66,11 +63,13 @@ export default class IPLeak {
 
         spinner.start(spinnerName, isSpinnerEnabled);
 
-        await Promise.all(
-            arrayFromLen.map(async () => {
+        await pMap(
+            arrayFromLen,
+            async () => {
                 await this.getDnsInfoOnce({session});
                 spinner.count(spinnerName, this._dnsRequestsCount);
-            }),
+            },
+            {concurrency: this._requestsRps},
         );
 
         await sleep(this._dnsRequestsWaitBeforeLastMs);
@@ -92,16 +91,8 @@ export default class IPLeak {
     } = {}) {
         const dnsEndpoint = IPLeak.endpoints.dns(session, uniqString);
 
-        const {body} = await request(
-            dnsEndpoint,
-            {},
-            {
-                queueBy: session,
-                rps: this._requestsRps,
-            },
-        );
-
-        return body;
+        const response = await fetch(dnsEndpoint);
+        return response.json();
     }
 
     /**
@@ -112,15 +103,7 @@ export default class IPLeak {
     async getIpInfo({ip = ''} = {}) {
         const ipEndpoint = IPLeak.endpoints.ip(ip);
 
-        const {body} = await requestCache(
-            ipEndpoint,
-            {},
-            {
-                expire: this._ipRequestsCacheExpireSec,
-                rps: this._requestsRps,
-            },
-        );
-
-        return body;
+        const response = await fetch(ipEndpoint);
+        return response.json();
     }
 }

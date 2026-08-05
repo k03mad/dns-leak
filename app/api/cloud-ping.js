@@ -1,25 +1,10 @@
-import {request} from '@k03mad/request';
-
 export default class CloudPing {
-    /**
-     * @param {object} [opts]
-     * @param {number} [opts.requestsRps] Parallel requests rps
-     */
-    constructor({requestsRps = 2} = {}) {
-        this._requestsRps = requestsRps;
-    }
-
     /** @returns {Promise<object>} */
     async getAllLocations() {
         const locationsEndpoint = CloudPing.endpoints.locations();
 
-        const {body} = await request(
-            locationsEndpoint,
-            {},
-            {
-                rps: this._requestsRps,
-            },
-        );
+        const response = await fetch(locationsEndpoint);
+        const body = await response.json();
 
         return body.nodes;
     }
@@ -28,15 +13,8 @@ export default class CloudPing {
     async getCurrentIataCode() {
         const testEndpoint = CloudPing.endpoints.edge();
 
-        const {headers} = await request(
-            testEndpoint,
-            {},
-            {
-                rps: this._requestsRps,
-            },
-        );
-
-        return headers['x-amz-cf-pop'];
+        const response = await fetch(testEndpoint);
+        return response.headers.get('x-amz-cf-pop');
     }
 
     /** @returns {Promise<object>} */
