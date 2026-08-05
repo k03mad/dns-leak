@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "17.0.0",
+  "version": "17.0.1",
   "description": "DNS leak test",
   "license": "MIT",
   "maintainers": [
@@ -19,7 +19,7 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@k03mad/ip2geo": "21.0.1",
+    "@k03mad/ip2geo": "21.0.2",
     "chalk": "6.0.0",
     "country-locale-map": "1.9.13",
     "nanoid": "6.0.1",
