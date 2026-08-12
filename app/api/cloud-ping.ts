@@ -1,3 +1,14 @@
+interface CloudPingEdgeLocation {
+  active_nodes: {code: string}[];
+  city?: string;
+  country?: string;
+  iata_code: string;
+}
+
+interface CloudPingLocationsResponse {
+  edge_locations: CloudPingEdgeLocation[];
+}
+
 export interface CloudPingLocation {
   city?: string;
   country?: string;
@@ -10,7 +21,25 @@ export default class CloudPing {
     const locationsEndpoint = CloudPing.endpoints.locations();
 
     const response = await fetch(locationsEndpoint);
-    return (await response.json()) as CloudPingLocations;
+    const data = (await response.json()) as CloudPingLocationsResponse;
+
+    const locations: CloudPingLocations = {};
+
+    for (const {city, country, iata_code: iata} of data.edge_locations) {
+      const location: CloudPingLocation = {};
+
+      if (city) {
+        location.city = city;
+      }
+
+      if (country) {
+        location.country = country;
+      }
+
+      locations[iata] = location;
+    }
+
+    return locations;
   }
 
   public async getCurrentIataCode(): Promise<string> {
@@ -36,7 +65,7 @@ export default class CloudPing {
 
   public static get endpoints(): {edge: () => string; locations: () => string} {
     return {
-      edge: (): string => 'https://edge.feitsui.com/',
+      edge: (): string => 'https://d1.awsstatic.com/',
       locations: (): string => 'https://www.cloudping.cloud/cloudfront-edge-locations.json',
     };
   }
