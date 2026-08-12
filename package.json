@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "17.0.2",
+  "version": "17.0.3",
   "description": "DNS leak test",
   "license": "MIT",
   "maintainers": [
