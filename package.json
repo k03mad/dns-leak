@@ -32,7 +32,7 @@
     "nanoid-dictionary": "5.0.0",
     "ora": "9.4.1",
     "p-map": "7.0.7",
-    "tsx": "4.23.8"
+    "tsx": "4.23.13"
   },
   "devDependencies": {
     "@k03mad/oxlint-config": "0.12.2",
