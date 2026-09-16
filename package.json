@@ -1,6 +1,6 @@
 {
   "name": "@k03mad/dns-leak",
-  "version": "17.0.5",
+  "version": "17.1.0",
   "description": "DNS leak test",
   "license": "MIT",
   "maintainers": [
@@ -25,22 +25,22 @@
     "prepare": "husky || true"
   },
   "dependencies": {
-    "@k03mad/ip2geo": "21.0.2",
+    "@k03mad/ip2geo": "21.0.4",
     "chalk": "6.0.0",
-    "country-locale-map": "1.9.13",
+    "country-locale-map": "1.9.14",
     "nanoid": "6.0.1",
     "nanoid-dictionary": "5.0.0",
     "ora": "9.4.1",
-    "p-map": "7.0.7",
-    "tsx": "4.23.8"
+    "p-map": "7.0.8",
+    "tsx": "4.23.13"
   },
   "devDependencies": {
-    "@k03mad/oxlint-config": "0.12.2",
+    "@k03mad/oxlint-config": "0.12.5",
     "@tsconfig/strictest": "2.0.8",
     "@types/node": "26.5.1",
     "husky": "9.1.7",
-    "oxfmt": "0.65.0",
-    "oxlint": "1.77.0",
+    "oxfmt": "0.68.0",
+    "oxlint": "1.83.0",
     "typescript": "7.0.2"
   },
   "engines": {
