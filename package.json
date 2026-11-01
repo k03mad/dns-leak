@@ -28,7 +28,7 @@
     "@k03mad/ip2geo": "21.3.0",
     "chalk": "6.0.1",
     "country-locale-map": "1.9.14",
-    "nanoid": "6.0.1",
+    "nanoid": "6.0.2",
     "nanoid-dictionary": "5.0.0",
     "ora": "9.4.1",
     "p-map": "7.0.8",
